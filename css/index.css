@@ -145,7 +145,48 @@ body{
     color: #ad0000;
     text-decoration: underline;
 }
+/*轮播图开始*/
+#pic li img{
+    width: 300px;
+    height: 235px;
+}
 
+.wrap{
+    width: 300px;
+    height: 235px;
+    margin:0px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.wrap ul{
+    position:absolute;
+}
+
+.wrap ol{
+    position:absolute;
+    right:5px;
+    bottom:10px;
+}
+
+.wrap ol li{
+    height:20px; width: 20px;
+    background:#ccc;
+    border:solid 1px #666;
+    margin-left:5px;
+    color:#000;
+    float:left;
+    line-height:20px;
+    text-align:center;
+    cursor:pointer;
+}
+
+.wrap ol .on{
+    background:#E97305;
+    color:#fff;
+}
+
+/*轮播图结束*/
 .content_container2{
     width: 300px;
     float: left;
@@ -265,14 +306,78 @@ body{
     background-color: #ca1413;
 }
 
-.li_activ{
+.li_active{
     background-color: #ca1413!important;
 }
 
 .content_active{
-    display: block;
+    display: block!important;
 }
 
+/*电商平台开始*/
 .ele_bussiness_content>div{
     display: none;
+    float: right;
+    width: 270px;
+}
+
+.bussiness_img{
+    width: 80px;
+    float: left;
+    margin: 5px 5px;
+}
+.bussiness_img img{
+    width: 80px;
+}
+
+.intro{
+    color: white;
+    font-size: 12px;
+    background-color: #3b4047;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+
+/*友情链接开始*/
+
+.link{
+    width: 1000px;
+    height: 120px;
+    background: url("../images/link_bg.png") no-repeat;
+}
+
+.link .title{
+    color: white;
+    font-size: 14px;
+}
+
+.link_content{
+    width: 180px;
+    float: left;
+    font-size: 12px;
+    margin: 20px auto;
+    text-align: center;
+    background: url("../images/link_arrow.png") no-repeat 50px;
+}
+
+.link_content a{
+    color: black;
+}
+
+.link_content a:hover, .link_content a:active {
+    color: #ad0000;
+    text-decoration: underline;
+}
+
+.info{
+    width: 900px;
+    margin: 0 auto;
+}
+
+.info td{
+    width: 300px;
+    color: #888888;
+    font-family: "微软雅黑";
+    font-size: 12px;
 }

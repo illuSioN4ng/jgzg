@@ -8,40 +8,11 @@
     <link rel="stylesheet" href="./css/index.css" type="text/css">
 
     <script src="./js/jquery.min.js"></script>
-    <!-- search判断-->
-    <script>
-        function judge_input(){
-            var input = document.getElementById('search_input');
-            if(input.value.length=="")
-            {
-                alert('请输入搜索值');
-                return false;
-            }else{
-                return true;
-            }
+    <script src="./js/index.js"></script>
+    <style type="text/css">
+        #tab_ul {
         }
-    </script>
-
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-//            <!--************************导航栏JS代码开始*******************-->
-            jQuery.navlevel2 = function(level1,dytime) {
-                $(level1).mouseenter(function(){
-                    varthis = $(this);
-                    delytime=setTimeout(function(){
-                        varthis.find('ul').slideDown();
-                    },dytime);
-                });
-                $(level1).mouseleave(function(){
-                    clearTimeout(delytime);
-                    $(this).find('ul').slideUp();
-                });
-            };
-            $.navlevel2(".nav>ul>li",200);
-//            <!--************************导航栏JS代码结束*******************-->
-        });
-    </script>
+    </style>
 </head>
 <body>
     <div class="container">
@@ -146,7 +117,24 @@
                     <a href="#">重庆万州区：“一考四制”激发非公企业党组织书记活力</a><span class="date"></span>
                 </div>
             </div>
-            <div class="content_container1 mg_right"></div>
+            <div class="content_container1 mg_right">
+                <div class="wrap" id='wrap'>
+                    <ul id="pic">
+                        <li><img src="./images/images.png" alt=""></li>
+                        <li><img src="./images/images1.png" alt=""></li>
+                        <li><img src="./images/images.png" alt=""></li>
+                        <li><img src="./images/images1.png" alt=""></li>
+                        <li><img src="./images/images.png" alt=""></li>
+                    </ul>
+                    <ol id="list">
+                        <li class="on">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ol>
+                </div>
+            </div>
             <div class="content_container1">
                 <div class="title">
                     时政要闻 <span><a href="#">更多&gt;&gt;</a></span>
@@ -282,21 +270,162 @@
                     </div>
                     <div id="tab" class="tab">
                         <ul id="tab_ul">
-                            <li class="li_activ">旅游</li>
+                            <li>旅游</li>
                             <li>特产</li>
                             <li>美食</li>
                             <li>娱乐</li>
                             <li>互动</li>
                         </ul>
                     </div>
-                    <div class="ele_bussiness_content">
+                    <div class="ele_bussiness_content" id="ele_bussiness_content">
                         <div class="travel">
-                            1
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
                         </div>
-                        <div class="specialty">2</div>
-                        <div class="food">3</div>
-                        <div class="entertainment">4</div>
-                        <div class="interact">5</div>
+                        <div class="specialty">
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="food">
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="entertainment">
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="interact">
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                            <div class="bussiness_img">
+                                <a href="">
+                                    <img src="./images/bussiness_img.png" alt=""/>
+                                    <div class="intro">剑门关</div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -304,7 +433,40 @@
         </div>
         <!-- footer-->
         <div class="footer">
-
+            <div class="link">
+                <div class="title">
+                    友情链接
+                </div>
+                <div class="link_content">
+                    <a href="">组工论坛</a>
+                </div>
+                <div class="link_content">
+                    <a href="">组工微博</a>
+                </div>
+                <div class="link_content">
+                    <a href="">留言</a>
+                </div>
+                <div class="link_content">
+                    <a href="">下载中心</a>
+                </div>
+                <div class="link_content">
+                    <a href="">电子邮件</a>
+                </div>
+            </div>
+            <div class="info">
+                <table>
+                    <tr>
+                        <td>地址： 广元市利州区人民路北段7号</td>
+                        <td>电话：0839-3264218</td>
+                        <td>邮编：61173</td>
+                    </tr>
+                    <tr>
+                        <td>中共广元市委组织部</td>
+                        <td>传真号：028-61831248</td>
+                        <td>邮箱:zzb@uestc.edu.cn  </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 
