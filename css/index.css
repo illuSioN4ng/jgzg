@@ -1,0 +1,278 @@
+body{
+    background: url("../images/body_bg.png") no-repeat;
+}
+.container{
+    width: 1000px;
+    margin: 5px auto;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    background-color: #f6f0e2;
+}
+
+.top_logo{
+    height: 134px;
+    background: url("../images/top_log.png");
+}
+
+.nav{
+    height: 50px;
+    background-color: #ad0000;
+    border-radius: 2px;
+}
+.nav>ul>li{
+    float: left;
+    width: 90px;
+}
+
+.nav>ul>li>a{
+    /*/float: left;*/
+    width: 90px;
+    color: white;
+    line-height: 50px;
+    height: 50px;
+    font-weight: 900;
+    font-family: "微软雅黑";
+}
+
+.sub_nav{
+    background-color: #e8e8e8;
+    display: none;
+    position: absolute;
+    z-index: 9;
+}
+
+.sub_nav li{
+    background: url("../images/sub_nav_right.png") no-repeat 80px 13px;
+    width: 90px;
+    height: 30px;
+    padding: 5px;
+}
+
+.sub_nav_li_line{
+    border-top: solid 2px #bbbbbb;
+}
+.sub_nav a{
+    color: black;
+    height: 30px;
+    width: 90px;
+    line-height: 30px;
+}
+
+.mg_left_50{
+    margin-left: 50px;
+}
+
+.mg_right_50{
+    margin-right: 50px;
+}
+
+.clr{
+    clear: both;
+}
+.top_info{
+    float: right;
+    font-size: 16px;
+    color: #ad0000;
+    line-height: 23px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.search_input{
+    border: solid 2px #f7d177;
+    border-radius: 3px;
+    height: 23px;
+    width: 150px;
+}
+
+.search_btn{
+    width: 56px;
+    height: 25px;
+    border: solid 2px #f7d177;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.top_image{
+    background: url('../images/top_image.png');
+    height: 248px;
+    width: 984px;
+    margin: 12px auto 15px;
+}
+
+.content{
+    width: 984px;
+    margin: 0 auto;
+}
+
+.content_container1{
+    width: 300px;
+    height: 235px;
+    float: left;
+    background: url("../images/content_bg.png") #fbf8f1 no-repeat;
+    padding: 6px 6px 6px 10px;
+    border-top: solid 3px #d5c2b0;
+    color: #ca1413;
+    font-size: 16px;
+    line-height: 30px;
+    font-family: "黑体";
+    margin: 5px auto;
+}
+
+.content_container1 span a{
+    color: #787878;
+    float: right;
+    font-size: 9px;
+    font-family: "宋体";
+}
+
+.mg_right{
+    margin-right: 17px;
+}
+
+.content_list a{
+    font-family: "宋体";
+    font-size: 12px;
+    display: block;
+}
+
+.content_list a:link, .content_list a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.content_list a:hover, .content_list a:active {
+    color: #ad0000;
+    text-decoration: underline;
+}
+
+.content_container2{
+    width: 300px;
+    float: left;
+}
+
+.content_container3{
+    width: 300px;
+    height: 235px;
+    background: url("../images/content_bg.png") #fbf8f1 no-repeat;
+    border-top: solid 3px #d5c2b0;
+    color: #ca1413;
+    padding: 6px 6px 6px 10px;
+    font-size: 16px;
+    line-height: 30px;
+    font-family: "黑体";
+    margin: 5px auto;
+    overflow: hidden;
+}
+.pd{
+    padding-left: 15px;
+    padding-right: 6px;
+}
+.content_container2 span a{
+    color: #787878;
+    float: right;
+    font-size: 9px;
+    font-family: "宋体";
+}
+
+.life{
+    overflow: hidden;
+}
+.life span{
+    font-size: 14px;
+    color: black;
+}
+.life_img{
+    display: block;
+    float: left;
+    height: 90px;
+    width: 90px;
+    border: solid 10px white;
+}
+
+.media{
+    height: 120px;
+}
+
+.party{
+    height: 160px;
+}
+
+.fast_channel{
+    height: 130px;
+}
+
+.mg_bottom{
+    margin-bottom: 20px;
+}
+
+.media table td{
+    padding: 5px 20px;
+    width: 110px;
+    font-size: 14px;
+    background: url("../images/media_li.png") no-repeat 0 15px;
+}
+
+.media table td a{
+    color: black;
+}
+
+.media table td a:hover, .media table td a:active {
+    color: #ad0000;
+    text-decoration: underline;
+}
+
+.fast_channel table td{
+    font-size: 12px;
+    padding: 5px 20px;
+    width: 110px;
+    background: url("../images/media_li.png") no-repeat 0 15px;
+}
+
+.fast_channel table td a{
+    color: black;
+}
+
+.fast_channel table td a:hover, .fast_channel table td a:active {
+    color: #ad0000;
+    text-decoration: underline;
+}
+
+.education{
+    height: 130px;
+}
+
+
+.ele_bussiness{
+    height: 335px;
+}
+
+.tab{
+    float:right;
+    width: 25px;
+}
+
+.tab li{
+    color: white;
+    background-color: #a5a29f;
+
+    padding: 5px;
+    line-height: 25px;
+    border-top: solid 2px white;
+}
+
+.tab li:hover{
+    background-color: #ca1413;
+}
+
+.li_activ{
+    background-color: #ca1413!important;
+}
+
+.content_active{
+    display: block;
+}
+
+.ele_bussiness_content>div{
+    display: none;
+}

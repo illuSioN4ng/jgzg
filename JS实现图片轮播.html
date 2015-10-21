@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  *{margin:0;
+    padding:0;
+    list-style:none;}
+  .wrap{height:170px;
+        width:490px;
+        margin:60px auto;
+        overflow: hidden;
+        position: relative;
+        margin:100px auto;}
+  .wrap ul{position:absolute;} 
+  .wrap ul li{height:170px;}
+  .wrap ol{position:absolute;
+           right:5px;
+           bottom:10px;}
+  .wrap ol li{height:20px; width: 20px;
+              background:#ccc;
+              border:solid 1px #666;
+              margin-left:5px;
+              color:#000;
+              float:left;
+              line-height:center;
+              text-align:center;
+              cursor:pointer;}
+  .wrap ol .on{background:#E97305;
+               color:#fff;}
+
+  </style>
+  <script type="text/javascript">
+  function preLoadImages(){
+      if(document.images){
+        pictures = new Array();
+        pictures[0] = new Image();
+        pictures[0] = "http://img.mukewang.com/54111cd9000174cd04900170.jpg";
+        pictures[1] = new Image();
+        pictures[1] = "http://img.mukewang.com/54111dac000118af04900170.jpg";
+        pictures[2] = new Image();
+        pictures[2] = "http://img.mukewang.com/54111d9c0001998204900170.jpg";
+        pictures[3] = new Image();
+        pictures[3] = "http://img.mukewang.com/54111d8a0001f41704900170.jpg";
+        pictures[4] = new Image();
+        pictures[4] = "http://img.mukewang.com/54111d7d00018ba604900170.jpg";
+        document.images[0].src = pictures[0];
+        document.images[1].src = pictures[1];
+        document.images[2].src = pictures[2];
+        document.images[3].src = pictures[3];
+        document.images[4].src = pictures[4];
+      }else{
+        alert("There are no images to preload!");
+      }
+    }
+
+  window.onload=function(){
+    preLoadImages();
+    var wrap=document.getElementById('wrap'),
+        pic=document.getElementById('pic').getElementsByTagName('li'),
+        list=document.getElementById('list').getElementsByTagName('li'),
+        index=0,
+        timer=null;
+
+      // 定义并调用自动播放函数
+      if(timer){
+        clearInterval(timer);
+      }
+      timer = setInterval(autoPlay, 2000);
+     // 鼠标划过整个容器时停止自动播放
+      wrap.onmouseover = function() {
+        /* Act on the event */
+        clearInterval(timer);
+      };
+
+     // 鼠标离开整个容器时继续播放至下一张
+      wrap.onmouseout = function() {
+       /* Act on the event */
+       timer = setInterval(autoPlay, 2000);
+     };
+     // 遍历所有数字导航实现划过切换至对应的图片
+
+     for(var j = 0; j < list.length; j++){
+      list[j].id = j;
+      list[j].onmouseover = function(){
+        index = this.id;
+        // alert(this);
+        changePic(index); 
+        index ++;//若不加index++ 会导致划过时显示的页面鼠标划出会停留4S
+      };
+      // list[j].onmouseout = function(){
+      //   timer = setInterval(autoPlay, 2000);
+      // };
+    }
+
+      function autoPlay(){
+        if(index >= pic.length){
+          index = 0;
+        }
+        changePic(index);
+        index++;
+      }
+      // 定义图片切换函数
+      function changePic(curIndex){
+        for(var i = 0; i < pic.length; i++){
+          if(i == curIndex){
+            pic[i].style.display = "block";
+            list[i].className = "on";
+          }else{
+            pic[i].style.display = "none";
+            list[i].className = "";
+          }
+          //index++ 不该写在这里，因为数字索引划过也会调用这个函数，应写在autoPlay中。
+        }
+      }
+   };
+
+  </script> 
+</head>
+<body>
+  <div class="wrap" id='wrap'>
+    <ul id="pic">
+      <li><img src="" alt=""></li>
+      <li><img src="" alt=""></li>
+      <li><img src="" alt=""></li>
+      <li><img src="" alt=""></li>
+      <li><img src="" alt=""></li>    
+    </ul>
+    <ol id="list">
+      <li class="on">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ol>
+  </div>
+</body>
+</html>
