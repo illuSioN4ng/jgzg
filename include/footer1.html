@@ -1,0 +1,30 @@
+<div class="footer">
+    <div class="link">
+        <div class="title">
+            友情链接
+        </div>
+        [@cms_friendlink_list ctgId='1' count='10']
+        [#list tag_list as link]
+        <div class="link_content">
+            <a href="${link.domain}" onclick="$.get('${base}/friendlink_view.jspx?id=${link.id}')" target="_blank" title="${link.name}">
+                [@text_cut s=link.name len='10' /]
+            </a>
+        </div>
+        [/#list]
+        [/@cms_friendlink_list]
+    </div>
+    <div class="info">
+        <table>
+            <tr>
+                <td>地址： 广元市利州区人民路北段7号</td>
+                <td>电话：0839-3264218</td>
+                <td>邮编：61173</td>
+            </tr>
+            <tr>
+                <td>中共广元市委组织部</td>
+                <td>传真号：028-61831248</td>
+                <td>邮箱:zzb@uestc.edu.cn  </td>
+            </tr>
+        </table>
+    </div>
+</div>

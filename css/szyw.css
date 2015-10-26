@@ -13,7 +13,7 @@
     top: 211px;
 }
 
-ul{
+.left_navi ul{
     float: left;
     width: 250px;
 }
@@ -63,6 +63,10 @@ ul{
     border-left: solid 10px #b7b7b7;
 }
 
+.news_location a{
+    color: black;
+}
+
 .news_location span{
     color: #8c1515;
 }
@@ -77,6 +81,7 @@ ul{
     padding: 10px 20px;
     font-size: 16px;
     font-family: "宋体";
+    float: left;
 }
 
 .news_lists a:hover, .news_lists a:active {
@@ -86,6 +91,9 @@ ul{
 
 .date{
     float: right;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: "宋体";
 }
 
 
