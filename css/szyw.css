@@ -1,0 +1,103 @@
+.top_image_szyw{
+    background: url("../images/top_image_szyw.png") no-repeat;
+    width:1000px;
+    height: 301px;
+    position: relative;
+}
+
+.top_szyw{
+    background: url("../images/top_szyw.png") no-repeat;
+    width: 1000px;
+    height: 90px;
+    position: absolute;
+    top: 211px;
+}
+
+ul{
+    float: left;
+    width: 250px;
+}
+.left_navi li{
+    width: 250px;
+    height: 40px;
+    font: 20px "微软雅黑";
+    line-height: 40px;
+}
+
+.left_navi li a{
+    display: block;
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    margin-top: 15px;
+    border-radius: 3px;
+}
+
+.left_navi li a:link, .left_navi li a:visited {
+    color: #8c1515;
+    background: white url("../images/news_navi_arrow.png") no-repeat 210px 15px;
+    border: solid 1px #8c1515;
+}
+
+.left_navi li a:hover, .left_navi li a:active {
+    color: white;
+    background: #8c1515 url("../images/news_navi_arrow_active.png") no-repeat 210px 15px;
+    border: solid 1px #610f0f;
+}
+
+#left_navi_active{
+    color: white;
+    background: #8c1515 url("../images/news_navi_arrow_active.png") no-repeat 210px 15px;
+    border: solid 1px #610f0f;
+}
+
+.right_news_lists{
+    float: left;
+    width: 715px;
+    margin-left: 30px;
+}
+
+.news_location{
+    font: 17px "黑体";
+    padding: 10px 20px;
+    border-left: solid 10px #b7b7b7;
+}
+
+.news_location span{
+    color: #8c1515;
+}
+
+.news_lists{
+    min-height: 300px;
+}
+
+.news_lists a{
+    color: black;
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: "宋体";
+}
+
+.news_lists a:hover, .news_lists a:active {
+    color: #8c1515;
+    text-decoration: underline;
+}
+
+.date{
+    float: right;
+}
+
+
+.news_pages{
+    text-align: center;
+}
+
+.news_pages a{
+    color: black;
+}
+
+.news_pages a:hover, .news_pages a:active{
+    color: #8c1515;
+    text-decoration: underline;
+}
