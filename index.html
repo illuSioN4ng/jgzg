@@ -2,469 +2,384 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>剑阁组工首页</title>
+    <title>${site.name}</title>
+    <meta http-equiv="keywords" content="${site.keywords!}" />
+    <meta http-equiv="description" content="${site.description!}" />
 
-    <link rel="stylesheet" href="./css/reset.css" type="text/css">
-    <link rel="stylesheet" href="./css/index.css" type="text/css">
+    <!--[if lt IE 9]>
+    <script src="${resSys}/html5.js" type="text/javascript"></script>
+    <![endif]-->
 
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/index.js"></script>
+    <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
+
+    <link rel="stylesheet" href="/${res}/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/jgzg.css" type="text/css">
+
+    <script src="/${res}/js/jquery.min.js"></script>
+    <script src="/${res}/js/index.js"></script>
+
 </head>
 <body>
-    <div class="container">
+<div class="container">
 
-        <!-- 顶部容器-->
-        <div class="top">
-            <!-- 顶部logo-->
-            <div class="top_logo">
-
+    <!-- 顶部容器-->
+    <div class="top">
+        <!-- 顶部logo-->
+        [#include "../include/header.html"/]
+        <!-- 导航栏-->
+        [#include "../include/navi.html"/]
+        <div class="clr"></div>
+        <!-- 滚动播报+搜索-->
+        <div class="top_info">
+            <div class="search">
+                <label for="search_input">站内搜索：</label>
+                <input type="text" class="search_input" id="search_input"/>
+                <input type="button" value="搜索" class="search_btn" onclick="judge_input();"/>
             </div>
-            <!-- 导航栏-->
-            <div class="nav">
-                <ul>
-                    <li class="mg_left_50">
-                        <a href="#">首&nbsp;&nbsp;&nbsp;&nbsp;页</a>
-                    </li>
-                    <li>
-                        <a href="#">时政要闻</a>
-                        <ul class="sub_nav" >
-                            <li><a href="#">国内新闻</a></li>
-                            <li class="sub_nav_li_line"><a href="#">国际新闻</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">机构设置</a>
-                        <ul class="sub_nav" >
-                            <li><a href="#">领导班子</a></li>
-                            <li class="sub_nav_li_line"><a href="#">内设机构</a></li>
-                            <li class="sub_nav_li_line"><a href="#">办事指南</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">组工宣传</a>
-                        <ul class="sub_nav" >
-                            <li><a href="#">大事记</a></li>
-                            <li class="sub_nav_li_line"><a href="#">组工在线</a></li>
-                            <li class="sub_nav_li_line"><a href="#">组工信息</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">干部工作</a>
-                        <ul class="sub_nav" >
-                            <li><a href="#">队伍建设</a></li>
-                            <li class="sub_nav_li_line"><a href="#">干部任免</a></li>
-                            <li class="sub_nav_li_line"><a href="#">干部培训</a></li>
-                            <li class="sub_nav_li_line"><a href="#">干部监督</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">人才工作</a>
-                    </li>
-                    <li>
-                        <a href="#">党建工作</a>
-                    </li>
-                    <li>
-                        <a href="#">党务公开</a>
-                        <ul class="sub_nav" >
-                            <li><a href="#">通知公告</a></li>
-                            <li class="sub_nav_li_line"><a href="#">政务办法</a></li>
-                            <li class="sub_nav_li_line"><a href="#">领导讲话</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">多媒体</a>
-                        <ul class="sub_nav" >
-                            <li><a href="#">党员e家</a></li>
-                            <li class="sub_nav_li_line"><a href="#">剑阁党建</a></li>
-                            <li class="sub_nav_li_line"><a href="#">视频点播</a></li>
-                        </ul>
-                    </li>
-                    <li class="mg_right_50"><a href="#">电商平台</a></li>
+        </div>
+
+        <div class="clr"></div>
+        <!-- 顶部gif图-->
+        <div class="top_image"></div>
+    </div>
+
+    <!-- 内容容器-->
+    <div class="content">
+        <div class="content_container1 mg_right">
+            <div class="title">
+                通知公告 <span><a href="#">更多&gt;&gt;</a></span>
+            </div>
+            <div class="clr"></div>
+            <div class="content_list">
+                [@cms_content_list count='7' orderBy='4' titLen='21'
+                channelId='30' channelOption='1'] [#list tag_list as a]
+                <a href="${a.url}" title="${a.title}" target="_blank">[@text_cut
+                    s=a.title len=titLen append='...'/]</a></li> [/#list]
+                [/@cms_content_list]
+            </div>
+        </div>
+        <div class="content_container1 mg_right">
+            <div class="wrap" id='wrap'>
+                <ul id="pic">
+                    [@cms_content_list count='5' orderBy='4' titLen='21'
+                    channelId='1' channelOption='1'] [#list tag_list as b]
+                    [#if b.titleImg??]<li><a href="${b.url}" title="${b.title}" target="_blank">
+                    <img src="${b.titleImg!site.defImg}" alt="${b.title}">
+                </a></li>[/#if]
+                    [/#list]
+                    [/@cms_content_list]
                 </ul>
+                <ol id="list">
+                    <li class="on">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ol>
             </div>
-            <div class="clr"></div>
-            <!-- 滚动播报+搜索-->
-            <div class="top_info">
-                <div class="search">
-                    <label for="search_input">站内搜索：</label>
-                    <input type="text" class="search_input" id="search_input"/>
-                    <input type="button" value="搜索" class="search_btn" onclick="judge_input();"/>
-                </div>
-            </div>
-
-            <div class="clr"></div>
-            <!-- 顶部gif图-->
-            <div class="top_image"></div>
         </div>
-
-        <!-- 内容容器-->
-        <div class="content">
-            <div class="content_container1 mg_right">
-                <div class="title">
-                    通知公告 <span><a href="#">更多&gt;&gt;</a></span>
-                </div>
-                <div class="clr"></div>
-                <div class="content_list">
-                    <a href="#">重庆万州区：“一考四制”激发非公企业党组织书记活力</a><span class="date"></span>
-                    <a href="#">重庆万州区：“一考四制”激发非公企业党组织书记活力</a><span class="date"></span>
-                    <a href="#">重庆万州区：“一考四制”激发非公企业党组织书记活力</a><span class="date"></span>
-                    <a href="#">重庆万州区：“一考四制”激发非公企业党组织书记活力</a><span class="date"></span>
-                    <a href="#">重庆万州区：“一考四制”激发非公企业党组织书记活力</a><span class="date"></span>
-                    <a href="#">重庆万州区：“一考四制”激发非公企业党组织书记活力</a><span class="date"></span>
-                </div>
-            </div>
-            <div class="content_container1 mg_right">
-                <div class="wrap" id='wrap'>
-                    <ul id="pic">
-                        <li><img src="./images/images.png" alt=""></li>
-                        <li><img src="./images/images1.png" alt=""></li>
-                        <li><img src="./images/images.png" alt=""></li>
-                        <li><img src="./images/images1.png" alt=""></li>
-                        <li><img src="./images/images.png" alt=""></li>
-                    </ul>
-                    <ol id="list">
-                        <li class="on">1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                    </ol>
-                </div>
-            </div>
-            <div class="content_container1">
-                <div class="title">
-                    时政要闻 <span><a href="#">更多&gt;&gt;</a></span>
-                </div>
-                <div class="clr"></div>
-                <div class="content_list">
-                    <a href="#">重庆万州区：“一考四制”激发非公企业党组织书记活力</a><span class="date"></span>
-                    <a href="#">重庆万州区：“一考四制”激发非公企业党组织书记活力</a><span class="date"></span>
-                    <a href="#">重庆万州区：“一考四制”激发非公企业党组织书记活力</a><span class="date"></span>
-                    <a href="#">重庆万州区：“一考四制”激发非公企业党组织书记活力</a><span class="date"></span>
-                    <a href="#">重庆万州区：“一考四制”激发非公企业党组织书记活力</a><span class="date"></span>
-                    <a href="#">重庆万州区：“一考四制”激发非公企业党组织书记活力</a><span class="date"></span>
-                </div>
-            </div>
-            <div class="content_container1 mg_right">
-                <div class="title">
-                    组工宣传 <span><a href="#">更多&gt;&gt;</a></span>
-                </div>
-                <div class="clr"></div>
-                <div class="content_list">
-                    <a href="#">市农业局领导班子调整</a><span class="date"></span>
-                    <a href="#">市安监局领导班子调整</a><span class="date"></span>
-                    <a href="#">市卫生和计划生育委员会挂牌成立</a><span class="date"></span>
-                    <a href="#">广元经济技术开发区主要领导调整</a><span class="date"></span>
-                    <a href="#">市委党校主要领导调整</a><span class="date"></span>
-                </div>
-            </div>
-            <div class="content_container1 mg_right">
-                <div class="title">
-                    党务公开 <span><a href="#">更多&gt;&gt;</a></span>
-                </div>
-                <div class="clr"></div>
-                <div class="content_list">
-                    <a href="#">关于做好党员干部现代远程教育终端站点改版工作的通知</a><span class="date"></span>
-                    <a href="#">关于开展“新常态新习惯新作为”大讨论的通知</a><span class="date"></span>
-                    <a href="#">关于认真组织收看三集历史文献纪录片《信仰》的通知</a><span class="date"></span>
-                    <a href="#">关于积极参与主题征文和知识竞赛的通知</a><span class="date"></span>
-                    <a href="#">关于认真组织收看《百年潮 中国梦》电视政论片的通知</a><span class="date"></span>
-                </div>
-            </div>
-            <div class="content_container1">
-                <div class="title">
-                    干部工作 <span><a href="#">更多&gt;&gt;</a></span>
-                </div>
-                <div class="clr"></div>
-                <div class="content_list">
-                    <a href="#">着眼创新驱动发展 广纳天下英才</a><span class="date"></span>
-                    <a href="#">杜军昌同志主持召开大学生创新创业大赛协调会</a><span class="date"></span>
-                    <a href="#">2014年各县区人才新政汇编之：朝天区人才新政</a><span class="date"></span>
-                    <a href="#">2014年各县区人才新政汇编之：朝天区人才新政</a><span class="date"></span>
-                    <a href="#"> 我市举办工业经济紧缺人才专题培训班</a><span class="date"></span>
-                </div>
-            </div>
-            <div class="content_container2 mg_right">
-                <div class="content_container3">
-                    <div class="title">
-                        人才工作 <span><a href="#">更多&gt;&gt;</a></span>
-                    </div>
-                    <div class="content_list">
-                        <a href="#">着眼创新驱动发展 广纳天下英才</a><span class="date"></span>
-                        <a href="#">杜军昌同志主持召开大学生创新创业大赛协调会</a><span class="date"></span>
-                        <a href="#">2014年各县区人才新政汇编之：朝天区人才新政</a><span class="date"></span>
-                        <a href="#">2014年各县区人才新政汇编之：朝天区人才新政</a><span class="date"></span>
-                        <a href="#"> 我市举办工业经济紧缺人才专题培训班</a><span class="date"></span>
-                    </div>
-                </div>
-                <div class="content_container3">
-                    <div class="title">
-                        生活常识 <span><a href="#">更多&gt;&gt;</a></span>
-                    </div>
-                    <div class="life">
-                        <img src="./images/life_img.png" alt="life_logo" class="life_img"/>
-                        <span>生活百科网站为您提供最全面的生活小常识,生活小窍门,健康饮急救常识偏方大全,疾病预防,运动健身,养生保健,低碳生活等小知识生活百科网站为您提供最全面的生活小常识,生活小窍门,健康饮食,急救常识 偏方大全,疾病预防,运动健身,养生保健,低碳生活等小知识</span>
-                    </div>
-                </div>
-            </div>
-            <div class="content_container2 mg_right pd">
-                <div class="content_container1 media mg_bottom">
-                    <div class="title">
-                        多媒体平台 <span><a href="#">更多&gt;&gt;</a></span>
-                    </div>
-                    <table>
-                        <tr>
-                            <td><a href="">党员e家</a></td>
-                            <td><a href="">剑阁党建APP</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="">视频点击系统</a></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="content_container1 party mg_bottom">
-                    <div class="title">
-                        党建工作 <span><a href="#">更多&gt;&gt;</a></span>
-                    </div>
-                    <div class="content_list">
-                        <a href="#">着眼创新驱动发展 广纳天下英才</a><span class="date"></span>
-                        <a href="#">杜军昌同志主持召开大学生创新创业大赛协调会</a><span class="date"></span>
-                        <a href="#">2014年各县区人才新政汇编之：朝天区人才新政</a><span class="date"></span>
-                        <a href="#">2014年各县区人才新政汇编之：朝天区人才新政</a><span class="date"></span>
-                        <a href="#"> 我市举办工业经济紧缺人才专题培训班</a><span class="date"></span>
-                    </div>
-                </div>
-                <div class="content_container1 fast_channel">
-                    <div class="title">
-                        快速通道 <span><a href="#">更多&gt;&gt;</a></span>
-                    </div>
-                    <table>
-                        <tr>
-                            <td><a href="">云数据库</a></td>
-                            <td><a href="">干部日常管理系统</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="">贫困村第一书记系统</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="content_container2 pd">
-                <div class="content_container1 education">
-                    <div class="title">
-                        专题教育（三严三实） <span><a href="#">更多&gt;&gt;</a></span>
-                    </div>
-                    <div class="content_list">
-                        <a href="#">着眼创新驱动发展 广纳天下英才</a><span class="date"></span>
-                        <a href="#">杜军昌同志主持召开大学生创新创业大赛协调会</a><span class="date"></span>
-
-                    </div>
-                </div>
-                <div id='ele_bussiness' class="content_container1 ele_bussiness">
-                    <div class="title">
-                        电商平台 <span><a href="#">更多&gt;&gt;</a></span>
-                    </div>
-                    <div id="tab" class="tab">
-                        <ul id="tab_ul">
-                            <li>旅游</li>
-                            <li>特产</li>
-                            <li>美食</li>
-                            <li>娱乐</li>
-                            <li>互动</li>
-                        </ul>
-                    </div>
-                    <div class="ele_bussiness_content" id="ele_bussiness_content">
-                        <div class="travel">
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="specialty">
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="food">
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="entertainment">
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="interact">
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                            <div class="bussiness_img">
-                                <a href="">
-                                    <img src="./images/bussiness_img.png" alt=""/>
-                                    <div class="intro">剑门关</div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="content_container1">
+            <div class="title">
+                时政要闻 <span><a href="${base}/szyw/index.jhtml">更多&gt;&gt;</a></span>
             </div>
             <div class="clr"></div>
+            <div class="content_list">
+                [@cms_content_list count='7' orderBy='4' titLen='21'
+                channelId='1' channelOption='1'] [#list tag_list as a]
+                <a href="${a.url}" title="${a.title}" target="_blank">[@text_cut
+                    s=a.title len=titLen append='...'/]</a> [/#list]
+                [/@cms_content_list]
+            </div>
         </div>
-        <!-- footer-->
-        <div class="footer">
-            <div class="link">
+        <div class="content_container1 mg_right">
+            <div class="title">
+                组工宣传 <span><a href="#">更多&gt;&gt;</a></span>
+            </div>
+            <div class="clr"></div>
+            <div class="content_list">
+                [@cms_content_list count='7' orderBy='4' titLen='21'
+                channelId='4' channelOption='1'] [#list tag_list as a]
+                <a href="${a.url}" title="${a.title}" target="_blank">[@text_cut
+                    s=a.title len=titLen append='...'/]</a> [/#list]
+                [/@cms_content_list]
+            </div>
+        </div>
+        <div class="content_container1 mg_right">
+            <div class="title">
+                党务公开 <span><a href="#">更多&gt;&gt;</a></span>
+            </div>
+            <div class="clr"></div>
+            <div class="content_list">
+                [@cms_content_list count='7' orderBy='4' titLen='21'
+                channelId='5' channelOption='1'] [#list tag_list as a]
+                <a href="${a.url}" title="${a.title}" target="_blank">[@text_cut
+                    s=a.title len=titLen append='...'/]</a> [/#list]
+                [/@cms_content_list]
+            </div>
+        </div>
+        <div class="content_container1">
+            <div class="title">
+                干部工作 <span><a href="#">更多&gt;&gt;</a></span>
+            </div>
+            <div class="clr"></div>
+            <div class="content_list">
+                [@cms_content_list count='7' orderBy='4' titLen='21'
+                channelId='3' channelOption='1'] [#list tag_list as a]
+                <a href="${a.url}" title="${a.title}" target="_blank">[@text_cut
+                    s=a.title len=titLen append='...'/]</a> [/#list]
+                [/@cms_content_list]
+            </div>
+        </div>
+        <div class="content_container2 mg_right">
+            <div class="content_container3">
                 <div class="title">
-                    友情链接
+                    人才工作 <span><a href="#">更多&gt;&gt;</a></span>
                 </div>
-                <div class="link_content">
-                    <a href="">组工论坛</a>
-                </div>
-                <div class="link_content">
-                    <a href="">组工微博</a>
-                </div>
-                <div class="link_content">
-                    <a href="">留言</a>
-                </div>
-                <div class="link_content">
-                    <a href="">下载中心</a>
-                </div>
-                <div class="link_content">
-                    <a href="">电子邮件</a>
+                <div class="content_list">
+                    [@cms_content_list count='7' orderBy='4' titLen='21'
+                    channelId='7' channelOption='1'] [#list tag_list as a]
+                    <a href="${a.url}" title="${a.title}" target="_blank">[@text_cut
+                        s=a.title len=titLen append='...'/]</a> [/#list]
+                    [/@cms_content_list]
                 </div>
             </div>
-            <div class="info">
+            <div class="content_container3">
+                <div class="title">
+                    生活常识 <span><a href="#">更多&gt;&gt;</a></span>
+                </div>
+                <div class="life">
+                    <img src="/${res}/images/life_img.png" alt="life_logo" class="life_img"/>
+                    <span>生活百科网站为您提供最全面的生活小常识,生活小窍门,健康饮急救常识偏方大全,疾病预防,运动健身,养生保健,低碳生活等小知识生活百科网站为您提供最全面的生活小常识,生活小窍门,健康饮食,急救常识 偏方大全,疾病预防,运动健身,养生保健,低碳生活等小知识</span>
+                </div>
+            </div>
+        </div>
+        <div class="content_container2 mg_right pd">
+            <div class="content_container1 media mg_bottom">
+                <div class="title">
+                    多媒体平台 <span><a href="#">更多&gt;&gt;</a></span>
+                </div>
                 <table>
                     <tr>
-                        <td>地址： 广元市利州区人民路北段7号</td>
-                        <td>电话：0839-3264218</td>
-                        <td>邮编：61173</td>
+                        <td><a href="">党员e家</a></td>
+                        <td><a href="">剑阁党建APP</a></td>
                     </tr>
                     <tr>
-                        <td>中共广元市委组织部</td>
-                        <td>传真号：028-61831248</td>
-                        <td>邮箱:zzb@uestc.edu.cn  </td>
+                        <td><a href="">视频点击系统</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="content_container1 party mg_bottom">
+                <div class="title">
+                    党建工作 <span><a href="#">更多&gt;&gt;</a></span>
+                </div>
+                <div class="content_list">
+                    [@cms_content_list count='5' orderBy='4' titLen='21'
+                    channelId='8' channelOption='1'] [#list tag_list as a]
+                    <a href="${a.url}" title="${a.title}" target="_blank">[@text_cut
+                        s=a.title len=titLen append='...'/]</a> [/#list]
+                    [/@cms_content_list]
+                </div>
+            </div>
+            <div class="content_container1 fast_channel">
+                <div class="title">
+                    快速通道 <span><a href="#">更多&gt;&gt;</a></span>
+                </div>
+                <table>
+                    <tr>
+                        <td><a href="">云数据库</a></td>
+                        <td><a href="">干部日常管理系统</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">贫困村第一书记系统</a></td>
                     </tr>
                 </table>
             </div>
         </div>
+        <div class="content_container2 pd">
+            <div class="content_container1 education">
+                <div class="title">
+                    专题教育（三严三实） <span><a href="#">更多&gt;&gt;</a></span>
+                </div>
+                <div class="content_list">
+                    <a href="#">着眼创新驱动发展 广纳天下英才</a><span class="date"></span>
+                    <a href="#">杜军昌同志主持召开大学生创新创业大赛协调会</a><span class="date"></span>
+
+                </div>
+            </div>
+            <div id='ele_bussiness' class="content_container1 ele_bussiness">
+                <div class="title">
+                    电商平台 <span><a href="#">更多&gt;&gt;</a></span>
+                </div>
+                <div id="tab" class="tab">
+                    <ul id="tab_ul">
+                        <li>旅游</li>
+                        <li>特产</li>
+                        <li>美食</li>
+                        <li>娱乐</li>
+                        <li>互动</li>
+                    </ul>
+                </div>
+                <div class="ele_bussiness_content" id="ele_bussiness_content">
+                    <div class="travel">
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="/${res}/images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="specialty">
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="food">
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="entertainment">
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="interact">
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                        <div class="bussiness_img">
+                            <a href="">
+                                <img src="./images/bussiness_img.png" alt=""/>
+                                <div class="intro">剑门关</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clr"></div>
+    </div>
+    <!-- footer-->
+    <div class="footer">
+        [#include "../include/friendLink.html"/]
+        [#include "../include/footer1.html"/]
     </div>
 
+</div>
+<script src="/${res}/js/carousel.js"></script>
 </body>
 </html>

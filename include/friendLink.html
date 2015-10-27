@@ -1,0 +1,14 @@
+<div class="link">
+    <div class="title">
+        友情链接
+    </div>
+    [@cms_friendlink_list ctgId='1' count='10']
+    [#list tag_list as link]
+    <div class="link_content">
+        <a href="${link.domain}" onclick="$.get('${base}/friendlink_view.jspx?id=${link.id}')" target="_blank" title="${link.name}">
+            [@text_cut s=link.name len='10' /]
+        </a>
+    </div>
+    [/#list]
+    [/@cms_friendlink_list]
+</div>

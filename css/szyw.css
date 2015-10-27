@@ -67,6 +67,11 @@
     color: black;
 }
 
+.news_location a:hover, .news_location a:active {
+    color: #8c1515;
+    text-decoration: underline;
+}
+
 .news_location span{
     color: #8c1515;
 }
@@ -81,7 +86,7 @@
     padding: 10px 20px;
     font-size: 16px;
     font-family: "宋体";
-    float: left;
+    float:left;
 }
 
 .news_lists a:hover, .news_lists a:active {
@@ -99,6 +104,7 @@
 
 .news_pages{
     text-align: center;
+    margin: 30px 0;
 }
 
 .news_pages a{
@@ -108,4 +114,51 @@
 .news_pages a:hover, .news_pages a:active{
     color: #8c1515;
     text-decoration: underline;
+}
+
+/*新闻内容页开始*/
+.top_image_szyw_content{
+    background: url("../images/top_image_szyw_content.png") no-repeat;
+    width:1000px;
+    height: 301px;
+    position: relative;
+}
+
+.left_image{
+    width: 182px;
+    height: 352px;
+    background: url("../images/news_content_left_image.png");
+    float: left;
+}
+
+.right_news_content{
+    width: 800px;
+    float: left;
+    min-height: 600px;
+}
+
+.article_title{
+    font: 28px "微软雅黑";
+    color: #8c1515;
+    text-align: center;
+}
+
+.article_information{
+    font: 16px "宋体";
+    color: #777777;
+    text-align: center;
+    padding: 5px;
+}
+
+.article_line{
+    width: 800px;
+    height: 4px;
+    border-top: solid 4px #ad0000;
+}
+
+.article_content{
+    font: 16px "宋体";
+    color: black;
+    line-height: 30px;
+    padding: 20px;
 }
