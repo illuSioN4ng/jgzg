@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${site.name}</title>
+    <meta http-equiv="keywords" content="${site.keywords!}" />
+    <meta http-equiv="description" content="${site.description!}" />
+    <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
+    <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
+    <link rel="stylesheet" href="/${res}/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/jgzg.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/news.css" type="text/css">
+
+    <script src="/${res}/js/jquery.min.js"></script>
+    <script src="/${res}/js/index.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <!-- 顶部容器-->
+    <div class="top">
+        <!-- 顶部logo-->
+        [#include "../include/header.html"/]
+        <!-- 导航栏-->
+        [#include "../include/navi.html"/]
+        <!-- 顶部gif图-->
+        <div class="top_image_dwgk">
+            <div class="top_dwgk">
+
+            </div>
+        </div>
+
+        <!-- 左侧导航-->
+        <div class="left_navi">
+            <ul>
+                <li><a href="${base}/tzgg/index.jhtml">通知公告</a></li>
+                <li><a href="${base}/zfbf/index.jhtml">政府办法</a></li>
+                <li><a href="${base}/ldjh/index.jhtml">领导讲话</a></li>
+            </ul>
+        </div>
+
+        <!-- 右侧新闻列表-->
+        <div class="right_news_lists">
+            <div class="news_location">
+                当前位置：[#list channel.nodeList as n]<a href="${n.url}" target="_self">${n.name}</a>[#if n_has_next] &gt; [/#if][/#list]
+            </div>
+            <div class="news_lists">
+                [@cms_content_page count='15' orderBy='4' channelId=channel.id channelOption='1' dateFormat='yyyy-MM-dd'] [#list tag_pagination.list as a]
+                <div>
+                    <a href="${a.ctgUrl}" target="_blank"><span style="color: black;">[</span>${a.ctgName}<span style="color: black;">]</span></a>
+                    <a href="${a.url}" title="${a.title}" target="_blank">
+                        [@text_cut s=a.title len=25 append='...'/]
+                    </a>
+                    <span class="date">[${a.date?string(dateFormat)}]</span>
+                    <div class="clr"></div>
+                </div>[/#list]
+            </div>
+            <div class="news_pages">
+                [@cms_pagination sysPage='1'/][/@cms_content_page]
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+    [#include "../include/footer1.html"/]
+</div>
+<script>
+    var lis = $('.left_navi li a');
+    if(${channel.id} === 30){
+        lis[0].setAttribute('id', 'left_navi_active');
+    }else if(${channel.id} === 31){
+        lis[1].setAttribute('id', 'left_navi_active');
+    }else if(${channel.id} === 50){
+        lis[2].setAttribute('id', 'left_navi_active');
+    }
+</script>
+</body>
+</html>

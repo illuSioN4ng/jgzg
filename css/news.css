@@ -217,3 +217,19 @@
     position: absolute;
     top: 211px;
 }
+
+/*党务公开*/
+.top_image_swgk{
+    background: url("../images/top_image_dwgk.png") no-repeat;
+    width:1000px;
+    height: 301px;
+    position: relative;
+}
+
+.top_dwgk{
+    background: url("../images/top_dwgk.png") no-repeat;
+    width: 1000px;
+    height: 90px;
+    position: absolute;
+    top: 211px;
+}
