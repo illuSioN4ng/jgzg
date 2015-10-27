@@ -16,6 +16,7 @@
 .left_navi ul{
     float: left;
     width: 250px;
+    margin-left: 5px;
 }
 .left_navi li{
     width: 250px;
@@ -26,28 +27,28 @@
 
 .left_navi li a{
     display: block;
-    width: 250px;
+    width: 225px;
     height: 40px;
-    text-align: center;
+    padding-left: 25px;
     margin-top: 15px;
     border-radius: 3px;
 }
 
 .left_navi li a:link, .left_navi li a:visited {
     color: #8c1515;
-    background: white url("../images/news_navi_arrow.png") no-repeat 210px 15px;
+    background: white url("../images/news_navi_arrow.png") no-repeat 225px 15px;
     border: solid 1px #8c1515;
 }
 
 .left_navi li a:hover, .left_navi li a:active {
     color: white;
-    background: #8c1515 url("../images/news_navi_arrow_active.png") no-repeat 210px 15px;
+    background: #8c1515 url("../images/news_navi_arrow_active.png") no-repeat 225px 15px;
     border: solid 1px #610f0f;
 }
 
 #left_navi_active{
     color: white;
-    background: #8c1515 url("../images/news_navi_arrow_active.png") no-repeat 210px 15px;
+    background: #8c1515 url("../images/news_navi_arrow_active.png") no-repeat 225px 15px;
     border: solid 1px #610f0f;
 }
 
@@ -121,7 +122,6 @@
     background: url("../images/top_image_szyw_content.png") no-repeat;
     width:1000px;
     height: 301px;
-    position: relative;
 }
 
 .left_image{
@@ -161,4 +161,11 @@
     color: black;
     line-height: 30px;
     padding: 20px;
+}
+
+/*组工宣传开始*/
+.top_image_zgxc{
+    background: url("../images/top_image_zgxc_content.png") no-repeat;
+    width:1000px;
+    height: 301px;
 }

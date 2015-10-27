@@ -345,6 +345,7 @@ body{
     width: 1000px;
     height: 120px;
     background: url("../images/link_bg.png") no-repeat;
+    overflow:hidden;
 }
 
 .link .title{
@@ -353,12 +354,12 @@ body{
 }
 
 .link_content{
-    width: 180px;
+    width: 150px;
     float: left;
     font-size: 12px;
-    margin: 20px auto;
-    text-align: center;
-    background: url("../images/link_arrow.png") no-repeat 50px;
+    margin: 15px auto;
+    padding-left: 30px;
+    background: url("../images/link_arrow.png") no-repeat 10px;
 }
 
 .link_content a{
@@ -371,8 +372,9 @@ body{
 }
 
 .info{
+    background: url("../images/bottom_line.png") no-repeat;
     width: 900px;
-    margin: 0 auto;
+    margin: 15px auto;
 }
 
 .info td{
@@ -380,4 +382,5 @@ body{
     color: #888888;
     font-family: "微软雅黑";
     font-size: 12px;
+    padding: 10px 30px 15px 30px;
 }
