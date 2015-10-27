@@ -163,9 +163,57 @@
     padding: 20px;
 }
 
-/*组工宣传开始*/
+/*组工宣传*/
 .top_image_zgxc{
     background: url("../images/top_image_zgxc_content.png") no-repeat;
     width:1000px;
     height: 301px;
+}
+
+/*干部工作*/
+.top_image_gbgz{
+    background: url("../images/top_image_gbgz.png") no-repeat;
+    width:1000px;
+    height: 301px;
+    position: relative;
+}
+
+.top_gbgz{
+    background: url("../images/top_gbgz.png") no-repeat;
+    width: 1000px;
+    height: 90px;
+    position: absolute;
+    top: 211px;
+}
+
+/*人才工作*/
+.top_image_rcgz{
+    background: url("../images/top_image_rcgz.png") no-repeat;
+    width:1000px;
+    height: 301px;
+    position: relative;
+}
+
+.top_rcgz{
+    background: url("../images/top_rcgz.png") no-repeat;
+    width: 1000px;
+    height: 90px;
+    position: absolute;
+    top: 211px;
+}
+
+/*党建工作*/
+.top_image_djgz{
+    background: url("../images/top_image_djgz.png") no-repeat;
+    width:1000px;
+    height: 301px;
+    position: relative;
+}
+
+.top_djgz{
+    background: url("../images/top_djgz.png") no-repeat;
+    width: 1000px;
+    height: 90px;
+    position: absolute;
+    top: 211px;
 }

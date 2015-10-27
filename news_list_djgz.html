@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${site.name}</title>
+    <meta http-equiv="keywords" content="${site.keywords!}" />
+    <meta http-equiv="description" content="${site.description!}" />
+    <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
+    <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
+    <link rel="stylesheet" href="/${res}/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/jgzg.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/news.css" type="text/css">
+
+    <script src="/${res}/js/jquery.min.js"></script>
+    <script src="/${res}/js/index.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <!-- 顶部容器-->
+    <div class="top">
+        <!-- 顶部logo-->
+        [#include "../include/header.html"/]
+        <!-- 导航栏-->
+        [#include "../include/navi.html"/]
+        <!-- 顶部gif图-->
+        <div class="top_image_djgz">
+            <div class="top_djgz">
+
+            </div>
+        </div>
+
+        <!-- 左侧导航-->
+        <div class="left_image">
+
+        </div>
+
+        <!-- 右侧新闻列表-->
+        <div class="right_news_lists">
+            <div class="news_location">
+                当前位置：[#list channel.nodeList as n]<a href="${n.url}" target="_self">${n.name}</a>[#if n_has_next] &gt; [/#if][/#list]
+            </div>
+            <div class="news_lists">
+                [@cms_content_page count='15' orderBy='4' channelId=channel.id channelOption='1' dateFormat='yyyy-MM-dd'] [#list tag_pagination.list as a]
+                <div>
+                    <a href="${a.ctgUrl}" target="_blank"><span style="color: black;">[</span>${a.ctgName}<span style="color: black;">]</span></a>
+                    <a href="${a.url}" title="${a.title}" target="_blank">
+                        [@text_cut s=a.title len=25 append='...'/]
+                    </a>
+                    <span class="date">[${a.date?string(dateFormat)}]</span>
+                    <div class="clr"></div>
+                </div>[/#list]
+            </div>
+            <div class="news_pages">
+                [@cms_pagination sysPage='1'/][/@cms_content_page]
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+    [#include "../include/footer1.html"/]
+</div>
+</body>
+</html>
