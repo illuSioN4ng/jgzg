@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${site.name}</title>
+    <meta http-equiv="keywords" content="${site.keywords!}" />
+    <meta http-equiv="description" content="${site.description!}" />
+    <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
+    <link rel="stylesheet" href="/${res}/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/jgzg.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/news.css" type="text/css">
+
+    <script src="/${res}/js/jquery.min.js"></script>
+    <script src="/${res}/js/index.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            Cms.siteFlow("${base}", location.href, document.referrer);
+            $.cookie("_site_id_cookie", "${site.id!}", {
+                path : '${base}'
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+
+    <!-- 顶部容器-->
+    <div class="top">
+        <!-- 顶部logo-->
+        [#include "../include/header.html"/]
+        <!-- 导航栏-->
+        [#include "../include/navi.html"/]
+        <!-- 顶部gif图-->
+        <div class="top_image_search_result">
+
+        </div>
+    </div>
+    <div class="content">
+        <!-- 左侧导航-->
+        <div class="left_image">
+
+        </div>
+
+        <!-- 右侧新闻列表-->
+        <div class="right_news_lists">
+            <div class="news_location">
+                当前位置:站内搜索
+            </div>
+            <div class="search_box">
+                <form action="${base}/search.jspx" method="get">
+                    <label for="search_input">站内搜索：</label>
+                    <input class="search_input" type="text"
+                           id="search_input" name="q"/>
+                    <input class="search_btn" type="submit" value="搜索" onclick="return judge_input();"/>
+                </form>
+            </div>
+            <div class="news_lists">
+                [#if q??]
+                [@cms_lucene_page q=q channelId=channelId descLen='30' append='...' count='15' ]
+                <div class="search_information">
+                    您搜索的<span>"${input!}"</span>，共有<span>${tag_pagination.totalCount!}</span>条
+                </div>
+                [#list tag_list as s]
+                <div>
+                    <a href="${s.ctgUrl}" target="_blank">
+                        <span style="color: black;">[</span>
+                        ${s.ctgName}
+                        <span style="color: black;">]</span>
+                    </a>
+                    <a href="${s.url}" title="${s.title}" target="_blank">
+                        [@text_cut s=s.title len=23 append='...'/]
+                    </a>
+                    <span class="date">[${a.date?string(dateFormat)}]</span>
+                    <div class="clr"></div>
+                </div>[/#list]
+            </div>
+            <div class="news_pages">
+                [@cms_pagination sysPage='1'/]
+            </div>
+                [/@cms_lucene_page]
+                [/#if]
+        </div>
+    </div>
+    <div class="clr"></div>
+    <div class="footer">
+        [#include "../include/footer1.html"/]
+    </div>
+</div>
+</body>
+</html>

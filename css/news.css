@@ -330,8 +330,37 @@
     height: 301px;
 }
 
-.right_vedio_play{
-    width: 800px;
-    float: left;
-    min-height: 600px;
+/*搜索结果*/
+.top_image_search_result{
+    background: url("../images/znss.png") no-repeat;
+    width:1000px;
+    height: 301px;
 }
+
+.search_box{
+    padding:10px 30px;
+}
+
+.search_box .search_input{
+    border: solid 2px #f7d177;
+    border-radius: 3px;
+    height: 23px;
+    width: 550px;
+}
+
+.search_box .search_btn{
+    width: 70px;
+    height: 27px;
+    border: solid 2px #f7d177;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.search_information{
+    padding: 10px 30px;
+}
+
+.search_information span{
+    color: #8c1515;
+}
+
