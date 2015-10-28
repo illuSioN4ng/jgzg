@@ -31,11 +31,12 @@
         <div class="clr"></div>
         <!-- 滚动播报+搜索-->
         <div class="top_info">
-            <div class="search">
+            <form action="${base}/search.jspx" method="get">
                 <label for="search_input">站内搜索：</label>
-                <input type="text" class="search_input" id="search_input"/>
-                <input type="button" value="搜索" class="search_btn" onclick="judge_input();"/>
-            </div>
+                <input class="search_input" type="text"
+                       id="search_input" name="q"/>
+                <input class="search_btn" type="submit" value="搜索" onclick="judge_input();"/>
+            </form>
         </div>
 
         <div class="clr"></div>

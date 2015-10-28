@@ -151,7 +151,6 @@
 }
 
 .article_line{
-    width: 800px;
     height: 4px;
     border-top: solid 4px #ad0000;
 }
@@ -323,4 +322,16 @@
 .vedio_pages a:hover, .vedio_pages a:active{
     color: #8c1515;
     text-decoration: underline;
+}
+/*视频点播内容页*/
+.top_image_vedio_play{
+    background: url("../images/top_image_vedio_content.png") no-repeat;
+    width:1000px;
+    height: 301px;
+}
+
+.right_vedio_play{
+    width: 800px;
+    float: left;
+    min-height: 600px;
 }
