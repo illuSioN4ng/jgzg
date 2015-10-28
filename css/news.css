@@ -13,7 +13,7 @@
     top: 211px;
 }
 
-.left_navi ul{
+.left_navi{
     float: left;
     width: 250px;
     margin-left: 5px;
@@ -54,7 +54,7 @@
 
 .right_news_lists{
     float: left;
-    width: 715px;
+    width: 690px;
     margin-left: 30px;
 }
 
@@ -232,4 +232,95 @@
     height: 90px;
     position: absolute;
     top: 211px;
+}
+
+/*视频点播*/
+.top_image_spdb{
+    background: url("../images/top_image_spdb.png") no-repeat;
+    width:1000px;
+    height: 301px;
+    position: relative;
+}
+
+.top_spdb{
+    background: url("../images/top_spdb.png") no-repeat;
+    width: 1000px;
+    height: 90px;
+    position: absolute;
+    top: 211px;
+}
+.right_vedio_lists{
+    float: left;
+    width: 750px;
+    min-height: 150px;
+    margin-left: 30px;
+}
+
+.vedio_location{
+    font: 17px "黑体";
+    padding: 10px 20px;
+    border-left: solid 10px #b7b7b7;
+}
+
+.vedio_location a{
+    color: black;
+}
+
+.vedio_location a:hover, .vedio_location a:active {
+    color: #8c1515;
+    text-decoration: underline;
+}
+
+.vedio_location span{
+    color: #8c1515;
+}
+
+.vedio_lists{
+    min-height: 300px;
+}
+
+.vedio_info{
+    color: black;
+    display: block;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-family: "宋体";
+    float: left;
+}
+
+.vedio_info:hover, .vedio_info:active {
+    color: #8c1515;
+    text-decoration: underline;
+}
+
+.vedio li{
+    width: 200px;
+    float: left;
+    margin: 30px 25px;
+    list-style: none;
+}
+
+.vedio img{
+    width: 200px;
+    height: 115px;
+}
+
+.vedio_title{
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+}
+
+.vedio_pages{
+    text-align: center;
+    margin: 30px 0;
+}
+
+.vedio_pages a{
+    color: black;
+}
+
+.vedio_pages a:hover, .vedio_pages a:active{
+    color: #8c1515;
+    text-decoration: underline;
 }

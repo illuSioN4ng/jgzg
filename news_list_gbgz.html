@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>${site.name}</title>
+    <title>${channel.title!channel.name} - ${site.name}</title>
     <meta http-equiv="keywords" content="${site.keywords!}" />
     <meta http-equiv="description" content="${site.description!}" />
     <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
@@ -30,7 +30,8 @@
 
             </div>
         </div>
-
+    </div>
+    <div class="content">
         <!-- 左侧导航-->
         <div class="left_navi">
             <ul>
@@ -52,7 +53,7 @@
                 <div>
                     <a href="${a.ctgUrl}" target="_blank"><span style="color: black;">[</span>${a.ctgName}<span style="color: black;">]</span></a>
                     <a href="${a.url}" title="${a.title}" target="_blank">
-                        [@text_cut s=a.title len=25 append='...'/]
+                        [@text_cut s=a.title len=23 append='...'/]
                     </a>
                     <span class="date">[${a.date?string(dateFormat)}]</span>
                     <div class="clr"></div>
@@ -64,7 +65,9 @@
         </div>
     </div>
     <div class="clr"></div>
-    [#include "../include/footer1.html"/]
+    <div class="footer">
+        [#include "../include/footer1.html"/]
+    </div>
 </div>
 <script>
     var lis = $('.left_navi li a');

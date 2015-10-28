@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>${channel.title!channel.name} - ${site.name}</title>
     <meta http-equiv="keywords" content="${site.keywords!}" />
     <meta http-equiv="description" content="${site.description!}" />
-    <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
     <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
     <link rel="stylesheet" href="/${res}/css/reset.css" type="text/css">
     <link rel="stylesheet" href="/${res}/css/jgzg.css" type="text/css">
@@ -15,9 +14,9 @@
     <script src="/${res}/js/jquery.min.js"></script>
     <script src="/${res}/js/index.js"></script>
 </head>
+
 <body>
 <div class="container">
-
     <!-- 顶部容器-->
     <div class="top">
         <!-- 顶部logo-->
@@ -25,45 +24,46 @@
         <!-- 导航栏-->
         [#include "../include/navi.html"/]
         <!-- 顶部gif图-->
-        <div class="top_image_zgxc">
+        <div class="top_image_spdb">
+            <div class="top_spdb">
 
+            </div>
         </div>
-    </div>
-    <div class="content">
+
         <!-- 左侧导航-->
-        <div class="left_navi">
-            <ul>
-                <li><a href="${base}/dsj/index.jhtml">大事记</a></li>
-                <li><a href="${base}/zgzx/index.jhtml">组工在线</a></li>
-                <li><a href="${base}/zgxx/index.jhtml" id="left_navi_active">组工信息</a></li>
-            </ul>
+        <div class="left_image">
+
         </div>
 
         <!-- 右侧新闻列表-->
-        <div class="right_news_lists">
-            <div class="news_location">
+        <div class="right_vedio_lists">
+            <div class="vedio_location">
                 当前位置：[#list channel.nodeList as n]<a href="${n.url}" target="_self">${n.name}</a>[#if n_has_next] &gt; [/#if][/#list]
             </div>
-            <div class="news_lists">
-                [@cms_content_page count='15' orderBy='4' channelId=channel.id channelOption='1' dateFormat='yyyy-MM-dd'] [#list tag_pagination.list as a]
-                <div>
-                    <a href="${a.ctgUrl}" target="_blank"><span style="color: black;">[</span>${a.ctgName}<span style="color: black;">]</span></a>
-                    <a href="${a.url}" title="${a.title}" target="_blank">
-                        [@text_cut s=a.title len=23 append='...'/]
-                    </a>
-                    <span class="date">[${a.date?string(dateFormat)}]</span>
-                    <div class="clr"></div>
-                </div>[/#list]
+            <div class="vedio_lists">
+                [@cms_content_page count='15' orderBy='4' channelId=channel.id channelOption='1' dateFormat='yyyy-MM-dd']
+                [#list tag_pagination.list as a]
+                <ul class="vedio">
+                    [#if a.titleImg??]
+                    <li>
+                        <a href="${a.url}" title="${a.title}" target="_blank" class="vedio_info">
+                            <img src="${a.titleImg!site.defImg}" alt="${a.title}">
+                            <div class="vedio_title">
+                                [@text_cut s=a.title len=15 append='...'/]
+                            </div>
+                        </a>
+                    </li>
+                    [/#if]
+                </ul>
+                [/#list]
             </div>
-            <div class="news_pages">
+            <div class="vedio_pages">
                 [@cms_pagination sysPage='1'/][/@cms_content_page]
             </div>
         </div>
     </div>
     <div class="clr"></div>
-    <div class="footer">
-        [#include "../include/footer1.html"/]
-    </div>
+    [#include "../include/footer1.html"/]
 </div>
 </body>
 </html>

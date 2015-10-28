@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>${site.name}</title>
+    <title>${channel.title!channel.name} - ${site.name}</title>
     <meta http-equiv="keywords" content="${site.keywords!}" />
     <meta http-equiv="description" content="${site.description!}" />
     <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
@@ -25,12 +25,13 @@
         <!-- 导航栏-->
         [#include "../include/navi.html"/]
         <!-- 顶部gif图-->
-        <div class="top_image_dwgk">
-            <div class="top_dwgk">
+        <div class="top_image_gbgz">
+            <div class="top_gbgz">
 
             </div>
         </div>
-
+    </div>
+    <div class="content">
         <!-- 左侧导航-->
         <div class="left_navi">
             <ul>
@@ -62,7 +63,9 @@
         </div>
     </div>
     <div class="clr"></div>
-    [#include "../include/footer1.html"/]
+    <div class="footer">
+        [#include "../include/footer1.html"/]
+    </div>
 </div>
 <script>
     var lis = $('.left_navi li a');

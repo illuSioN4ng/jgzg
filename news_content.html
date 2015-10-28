@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>${site.name}</title>
+    <title>${channel.title!channel.name} - ${site.name}</title>
     <meta http-equiv="keywords" content="${site.keywords!}" />
     <meta http-equiv="description" content="${site.description!}" />
     <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
@@ -36,42 +36,43 @@
         <div class="top_image_szyw_content"></div>
     </div>
 
-    <!-- 左侧导航-->
-    <div class="left_image">
+    <div class="content">
+        <!-- 左侧导航-->
+        <div class="left_image">
 
-    </div>
+        </div>
 
-    <!-- 右侧新闻列表-->
-    <div class="right_news_content">
-        <div class="news_location">
-            当前位置：[#list channel.nodeList as n]<a href="${n.url}" target="_self">${n.name}</a>[#if n_has_next] &gt; [/#if][/#list]
-        </div>
-        <div class="article_title">${content.title}</div>
-        <div class="article_information">
-            作者：${content.author!''}&nbsp; 文章来源：${content.origin!''}
-            &nbsp;浏览次数：<span id="views"> </span>
-            &nbsp;发布时间：${content.releaseDate?string('yyyy-MM-dd')}
-        </div>
-        <div class="article_line"></div>
-        <div class="article_content">${txt!}
-            [#if content.attachments?size gt 0]
-            <div class="attachment">
-                附件:<br>
-                <ul>
-                    [#list content.attachments as attach]
-                    <li><a href="${attach.path}" id="attach${attach_index}">${attach.name}</a></li>
-                    [/#list]
-                </ul>
+        <!-- 右侧新闻列表-->
+        <div class="right_news_content">
+            <div class="news_location">
+                当前位置：[#list channel.nodeList as n]<a href="${n.url}" target="_self">${n.name}</a>[#if n_has_next] &gt; [/#if][/#list]
             </div>
-            [/#if]
+            <div class="article_title">${content.title}</div>
+            <div class="article_information">
+                作者：${content.author!''}&nbsp; 文章来源：${content.origin!''}
+                &nbsp;浏览次数：<span id="views"> </span>
+                &nbsp;发布时间：${content.releaseDate?string('yyyy-MM-dd')}
+            </div>
+            <div class="article_line"></div>
+            <div class="article_content">${txt!}
+                [#if content.attachments?size gt 0]
+                <div class="attachment">
+                    附件:<br>
+                    <ul>
+                        [#list content.attachments as attach]
+                        <li><a href="${attach.path}" id="attach${attach_index}">${attach.name}</a></li>
+                        [/#list]
+                    </ul>
+                </div>
+                [/#if]
+            </div>
         </div>
     </div>
+
     <div class="clr"></div>
     <div class="footer">
         [#include "../include/footer1.html"/]
     </div>
 </div>
-
-
 </body>
 </html>
