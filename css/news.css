@@ -364,3 +364,37 @@
     color: #8c1515;
 }
 
+/*电商平台开始*/
+.top_image_dspt{
+    background: url("../images/top_image_dspt.png") no-repeat;
+    width:1000px;
+    height: 301px;
+}
+
+.dspt_lists{
+    min-height: 500px;
+}
+
+.dspt_title{
+    width: 150px;
+    height: 145px;
+    float: left;
+    margin: 20px 10px;
+}
+
+.dspt_title img{
+    width: 150px;
+    height: 120px;
+    border: solid 1px #ccc;
+}
+
+.dspt_title_text{
+    width: 150px;
+    height: 20px;
+    border: solid 1px #ccc;
+    background-color: #3b4047;
+    text-align: center;
+    color: white;
+    font-size:14px;
+    line-height:20px;
+}

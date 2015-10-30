@@ -78,6 +78,11 @@ body{
     margin-right: 10px;
 }
 
+.top_weather{
+    float: right;
+    width: 330px;
+}
+
 .search_input{
     border: solid 2px #f7d177;
     border-radius: 3px;
@@ -328,6 +333,7 @@ body{
 }
 .bussiness_img img{
     width: 80px;
+    height: 64px;
 }
 
 .intro{

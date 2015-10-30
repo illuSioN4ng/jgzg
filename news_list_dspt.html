@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${channel.title!channel.name} - ${site.name}</title>
+    <meta http-equiv="keywords" content="${site.keywords!}" />
+    <meta http-equiv="description" content="${site.description!}" />
+    <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
+    <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
+    <link rel="stylesheet" href="/${res}/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/jgzg.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/news.css" type="text/css">
+
+    <script src="/${res}/js/jquery.min.js"></script>
+    <script src="/${res}/js/index.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <!-- 顶部容器-->
+    <div class="top">
+        <!-- 顶部logo-->
+        [#include "../include/header.html"/]
+        <!-- 导航栏-->
+        [#include "../include/navi.html"/]
+        <!-- 顶部gif图-->
+        <div class="top_image_dspt">
+
+        </div>
+    </div>
+    <div class="content">
+        <!-- 左侧导航-->
+        <div class="left_navi">
+            <ul>
+                <li><a href="${base}/ly/index.jhtml">旅游</a></li>
+                <li><a href="${base}/tc/index.jhtml">特产</a></li>
+                <li><a href="${base}/ms/index.jhtml">美食</a></li>
+                <li><a href="${base}/yl/index.jhtml">娱乐</a></li>
+                <li><a href="${base}/hd/index.jhtml">互动</a></li>
+            </ul>
+        </div>
+
+        <!-- 右侧新闻列表-->
+        <div class="right_news_lists">
+            <div class="news_location">
+                当前位置：[#list channel.nodeList as n]<a href="${n.url}" target="_self">${n.name}</a>[#if n_has_next] &gt; [/#if][/#list]
+            </div>
+            <div class="dspt_lists">
+                [@cms_content_page count='20' orderBy='4' channelId=channel.id channelOption='1' dateFormat='yyyy-MM-dd']
+                [#list tag_pagination.list as a]
+                <div class="dspt_title">
+                    <a href="${a.url}" title="${a.title}" target="_blank">
+                        <img src="${a.titleImg!site.defImg}" alt="${a.title}">
+                        <div class="dspt_title_text">[@text_cut s=a.title len=6 append='...'/]</div>
+                    </a>
+                </div>
+                [/#list]
+            </div>
+            <div class="news_pages">
+                [@cms_pagination sysPage='1'/]
+            </div>
+            [/@cms_content_page]
+        </div>
+    </div>
+    <div class="clr"></div>
+    <div class="footer">
+        [#include "../include/footer1.html"/]
+    </div>
+</div>
+<script>
+    var lis = $('.left_navi li a');
+    if(${channel.id} === 39){
+        lis[0].setAttribute('id', 'left_navi_active');
+    }else if(${channel.id} === 40){
+        lis[1].setAttribute('id', 'left_navi_active');
+    }else if(${channel.id} === 41){
+        lis[2].setAttribute('id', 'left_navi_active');
+    }else if(${channel.id} === 42){
+        lis[2].setAttribute('id', 'left_navi_active');
+    }else if(${channel.id} === 43){
+        lis[2].setAttribute('id', 'left_navi_active');
+    }
+</script>
+</body>
+</html>
