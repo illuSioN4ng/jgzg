@@ -48,7 +48,7 @@
     <div class="content">
         <div class="content_container1 mg_right">
             <div class="title">
-                通知公告 <span><a href="#">更多&gt;&gt;</a></span>
+                通知公告 <span><a href="${base}/tzgg/index.jhtml">更多&gt;&gt;</a></span>
             </div>
             <div class="clr"></div>
             <div class="content_list">
@@ -107,7 +107,7 @@
         </div>
         <div class="content_container1 mg_right">
             <div class="title">
-                党务公开 <span><a href="#">更多&gt;&gt;</a></span>
+                党务公开 <span><a href="${base}/dwgk/index.jhtml">更多&gt;&gt;</a></span>
             </div>
             <div class="clr"></div>
             <div class="content_list">
@@ -134,7 +134,7 @@
         <div class="content_container2 mg_right">
             <div class="content_container3">
                 <div class="title">
-                    人才工作 <span><a href="#">更多&gt;&gt;</a></span>
+                    人才工作 <span><a href="${base}/rcgz/index.jhtml">更多&gt;&gt;</a></span>
                 </div>
                 <div class="content_list">
                     [@cms_content_list count='7' orderBy='4' titLen='21'
@@ -146,11 +146,21 @@
             </div>
             <div class="content_container3">
                 <div class="title">
-                    生活常识 <span><a href="#">更多&gt;&gt;</a></span>
+                    生活常识 <span><a href="${base}/shcs/index.jhtml">更多&gt;&gt;</a></span>
                 </div>
                 <div class="life">
-                    <img src="/${res}/images/life_img.png" alt="life_logo" class="life_img"/>
-                    <span>生活百科网站为您提供最全面的生活小常识,生活小窍门,健康饮急救常识偏方大全,疾病预防,运动健身,养生保健,低碳生活等小知识生活百科网站为您提供最全面的生活小常识,生活小窍门,健康饮食,急救常识 偏方大全,疾病预防,运动健身,养生保健,低碳生活等小知识</span>
+                    [@cms_content_list count='1' orderBy='4' titLen='16' channelId='10' channelOption='1' append='...']
+                    [#list tag_list as a]
+                    [#if a.titleImg?? && a.description??]
+                    <a href="${a.url}" target="_blank">
+                        <img alt="life_titleImg" src="${a.titleImg!site.defImg}" class="life_img">
+                        <span class="cdxf_content">
+                            [@text_cut s=a.description len='110' append='...'/]
+                        </span>
+                    </a>
+                    [/#if]
+                    [/#list]
+                    [/@cms_content_list]
                 </div>
             </div>
         </div>
@@ -187,7 +197,7 @@
                 </div>
                 <table>
                     <tr>
-                        <td><a href="">云数据库</a></td>
+                        <td><a href="${base}/ysjk/index.jhtml">云数据库</a></td>
                         <td><a href="">干部日常管理系统</a></td>
                     </tr>
                     <tr>
@@ -199,17 +209,20 @@
         <div class="content_container2 pd">
             <div class="content_container1 education">
                 <div class="title">
-                    专题教育（三严三实） <span><a href="#">更多&gt;&gt;</a></span>
+                    专题教育（三严三实） <span><a href="${base}/ztjy/index.jhtml">更多&gt;&gt;</a></span>
                 </div>
                 <div class="content_list">
-                    <a href="#">着眼创新驱动发展 广纳天下英才</a><span class="date"></span>
-                    <a href="#">杜军昌同志主持召开大学生创新创业大赛协调会</a><span class="date"></span>
+                    [@cms_content_list count='4' orderBy='4' titLen='21'
+                    channelId='58' channelOption='1'] [#list tag_list as a]
+                    <a href="${a.url}" title="${a.title}" target="_blank">[@text_cut
+                        s=a.title len=titLen append='...'/]</a> [/#list]
+                    [/@cms_content_list]
 
                 </div>
             </div>
             <div id='ele_bussiness' class="content_container1 ele_bussiness">
                 <div class="title">
-                    电商平台 <span><a href="#">更多&gt;&gt;</a></span>
+                    电商平台 <span><a href="${base}/dspt/index.jhtml">更多&gt;&gt;</a></span>
                 </div>
                 <div id="tab" class="tab">
                     <ul id="tab_ul">

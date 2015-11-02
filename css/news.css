@@ -398,3 +398,30 @@
     font-size:14px;
     line-height:20px;
 }
+
+/*生活常识开始*/
+.top_image_shcs{
+    background: url("../images/top_image_shcs.png") no-repeat;
+    width:1000px;
+    height: 301px;
+}
+
+/*云数据库开始*/
+.top_image_ysjk{
+    background: url("../images/top_image_ysjk.png") no-repeat;
+    width:1000px;
+    height: 301px;
+}
+
+.ysjk_download{
+    float: right;
+    padding-left: 20px;
+    background: url("../images/download_logo.png") no-repeat 0 10px;
+}
+
+/*专题教育开始*/
+.top_image_ztjy{
+    background: url("../images/top_image_ztjy.png") no-repeat;
+    width:1000px;
+    height: 301px;
+}

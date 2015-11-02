@@ -25,19 +25,18 @@
         <!-- 导航栏-->
         [#include "../include/navi.html"/]
         <!-- 顶部gif图-->
-        <div class="top_image_gbgz">
-            <div class="top_gbgz">
+        <div class="top_image_ztjy">
 
-            </div>
         </div>
     </div>
     <div class="content">
         <!-- 左侧导航-->
         <div class="left_navi">
             <ul>
-                <li><a href="${base}/tzgg/index.jhtml">通知公告</a></li>
-                <li><a href="${base}/zcbf/index.jhtml">政策办法</a></li>
-                <li><a href="${base}/ldjh/index.jhtml">领导讲话</a></li>
+                <li><a href="${base}/hdgk/index.jhtml">活动概况</a></li>
+                <li><a href="${base}/xndt/index.jhtml">县内动态</a></li>
+                <li><a href="${base}/dxxc/index.jhtml">典型宣传</a></li>
+                <li><a href="${base}/xdth/index.jhtml">心得体会</a></li>
             </ul>
         </div>
 
@@ -51,7 +50,7 @@
                 <div>
                     <a href="${a.ctgUrl}" target="_blank"><span style="color: black;">[</span>${a.ctgName}<span style="color: black;">]</span></a>
                     <a href="${a.url}" title="${a.title}" target="_blank">
-                        [@text_cut s=a.title len=25 append='...'/]
+                        [@text_cut s=a.title len=23 append='...'/]
                     </a>
                     <span class="date">[${a.date?string(dateFormat)}]</span>
                     <div class="clr"></div>
@@ -69,12 +68,14 @@
 </div>
 <script>
     var lis = $('.left_navi li a');
-    if(${channel.id} === 30){
+    if(${channel.id} === 59){
         lis[0].setAttribute('id', 'left_navi_active');
-    }else if(${channel.id} === 31){
+    }else if(${channel.id} === 60){
         lis[1].setAttribute('id', 'left_navi_active');
-    }else if(${channel.id} === 50){
+    }else if(${channel.id} === 61){
         lis[2].setAttribute('id', 'left_navi_active');
+    }else if(${channel.id} === 62){
+        lis[3].setAttribute('id', 'left_navi_active');
     }
 </script>
 </body>
