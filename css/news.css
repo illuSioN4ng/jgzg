@@ -162,6 +162,14 @@
     padding: 20px;
 }
 
+.article_content a{
+    color: black;
+}
+
+.article_content a:hover, .article_content a:active{
+    color: #8c1515;
+    text-decoration: underline;
+}
 /*组工宣传*/
 .top_image_zgxc{
     background: url("../images/top_image_zgxc_content.png") no-repeat;
