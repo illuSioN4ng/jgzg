@@ -117,16 +117,31 @@ body{
 
 .content_container1{
     width: 300px;
-    height: 235px;
+    height: 170px;
     float: left;
     background: url("../images/content_bg.png") #fbf8f1 no-repeat;
     padding: 6px 6px 6px 10px;
     border-top: solid 3px #d5c2b0;
     color: #ca1413;
-    font-size: 16px;
     line-height: 30px;
     font-family: "黑体";
     margin: 5px auto;
+}
+
+.content_container_wrap{
+    width: 300px;
+    height: 170px;
+    float: left;
+    padding: 6px 6px 6px 10px;
+    color: #ca1413;
+    line-height: 30px;
+    font-family: "黑体";
+    margin: 5px auto;
+}
+
+.title{
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .content_container1 span a{
@@ -141,7 +156,9 @@ body{
 
 .content_list a{
     font-size: 12px;
+    line-height: 20px;
     display: block;
+    padding-left: 5px;
 }
 
 .content_list a:link, .content_list a:visited {
@@ -156,12 +173,12 @@ body{
 /*轮播图开始*/
 #pic li img{
     width: 300px;
-    height: 235px;
+    height: 170px;
 }
 
 .wrap{
     width: 300px;
-    height: 235px;
+    height: 170px;
     margin:0px auto;
     overflow: hidden;
     position: relative;
@@ -178,9 +195,11 @@ body{
 }
 
 .wrap ol li{
-    height:20px; width: 20px;
-    background:#ccc;
+    height:10px;
+    width: 10px;
+    background: white;
     border:solid 1px #666;
+    border-radius: 5px;
     margin-left:5px;
     color:#000;
     float:left;
@@ -190,8 +209,7 @@ body{
 }
 
 .wrap ol .on{
-    background:#E97305;
-    color:#fff;
+    background:#2E4B8E;
 }
 
 /*轮播图结束*/
