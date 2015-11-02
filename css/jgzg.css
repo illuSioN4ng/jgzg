@@ -133,7 +133,6 @@ body{
     color: #787878;
     float: right;
     font-size: 9px;
-    font-family: "宋体";
 }
 
 .mg_right{
@@ -141,7 +140,6 @@ body{
 }
 
 .content_list a{
-    font-family: "宋体";
     font-size: 12px;
     display: block;
 }
@@ -223,7 +221,6 @@ body{
     color: #787878;
     float: right;
     font-size: 9px;
-    font-family: "宋体";
 }
 
 .life{
@@ -260,7 +257,7 @@ body{
 .media table td{
     padding: 5px 20px;
     width: 110px;
-    font-size: 14px;
+    font-size: 12px;
     background: url("../images/media_li.png") no-repeat 0 15px;
 }
 

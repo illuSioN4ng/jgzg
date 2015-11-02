@@ -62,12 +62,22 @@
         <div class="content_container1 mg_right">
             <div class="wrap" id='wrap'>
                 <ul id="pic">
-                    [@cms_content_list count='5' orderBy='4' titLen='21'
-                    channelId='1' channelOption='1'] [#list tag_list as b]
-                    [#if b.titleImg??]<li><a href="${b.url}" title="${b.title}" target="_blank">
-                    <img src="${b.titleImg!site.defImg}" alt="${b.title}">
-                </a></li>[/#if]
-                    [/#list]
+                    [@cms_content_list count='100' orderBy='4' titLen='21'
+                    channelId='1' channelOption='1']
+                        [#assign x=0 /]
+                        [#list tag_list as b]
+                            [#if b.titleImg??]
+                                [#assign x = x+1 /]
+                                <li>
+                                    <a href="${b.url}" title="${b.title}" target="_blank">
+                                        <img src="${b.titleImg!site.defImg}" alt="${b.title}">
+                                    </a>
+                                </li>
+                                [#if x%4==0]
+                                    [#break]
+                                [/#if]
+                            [/#if]
+                        [/#list]
                     [/@cms_content_list]
                 </ul>
                 <ol id="list">
@@ -149,15 +159,16 @@
                     生活常识 <span><a href="${base}/shcs/index.jhtml">更多&gt;&gt;</a></span>
                 </div>
                 <div class="life">
-                    [@cms_content_list count='1' orderBy='4' titLen='16' channelId='10' channelOption='1' append='...']
+                    [@cms_content_list count='1' orderBy='100' titLen='16' channelId='10' channelOption='1' append='...']
                     [#list tag_list as a]
                     [#if a.titleImg?? && a.description??]
                     <a href="${a.url}" target="_blank">
                         <img alt="life_titleImg" src="${a.titleImg!site.defImg}" class="life_img">
-                        <span class="cdxf_content">
+                        <span class="shcs_content">
                             [@text_cut s=a.description len='110' append='...'/]
                         </span>
                     </a>
+                    [#break]
                     [/#if]
                     [/#list]
                     [/@cms_content_list]
