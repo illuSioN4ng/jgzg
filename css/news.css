@@ -433,3 +433,127 @@
     width:1000px;
     height: 301px;
 }
+
+/*在线投稿开始*/
+.top_image_zxtg{
+    background: url("../images/zxtg.png") no-repeat;
+    width:1000px;
+    height: 301px;
+}
+
+.right_zxtg_box{
+    float: left;
+    width: 770px;
+    margin-left: 30px;
+}
+
+.zxtg_box {
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #444;
+    font-family: "微软雅黑";
+}
+
+.zxtg_box input{
+    outline: none;
+}
+
+.zxtg_title {
+    margin: 5px 0px;
+    float: left;
+    width: 100%;
+}
+
+.zxtg_title input {
+    width: 550px;
+    height: 16px;
+}
+
+.zxtg_author {
+    margin: 5px 0px;
+    float: left;
+    width: 298px;
+}
+
+.zxtg_author input {
+    width: 220px;
+    height: 16px;
+}
+
+.zxtg_contact {
+    margin: 5px 0px;
+    float: left;
+    width: 300px;
+}
+
+.zxtg_contact input {
+    width: 220px;
+    height: 16px;
+}
+
+.zxtg_keyword {
+    margin: 5px 0px;
+    float: left;
+    width: 100%;
+}
+
+.zxtg_keyword input {
+    width: 534px;
+    height:16px;
+}
+
+.zxtg_source {
+    margin: 5px 0px;
+    float: left;
+    width: 100%;
+}
+
+.zxtg_source input {
+    height:16px;
+    width: 518px;
+}
+
+#editbox {
+    display: inline;
+    width: 720px;
+    height: 450px;
+    float: left;
+}
+
+.zxtg_button {
+    margin-left:270px;
+    width:230px;
+    float: left;
+}
+
+.zxtg_button input {
+    display:inline-block;
+    vertical-align:middle;
+    font-size: 14px;
+    color: #444;
+    font-family: "微软雅黑";
+    width: 70px;
+    height: 25px;
+    margin: 10px 20px;
+}
+
+.zxtg_captcha {
+    width:100%;
+    float:left;
+}
+
+.zxtg_captcha img{
+    display:inline-block;
+}
+
+.attachment_upload input{
+    width: 300px;
+    height: 30px;
+}
+
+#upload_content{
+    width:100%;
+    height:75px;
+    float: left;
+}

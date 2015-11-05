@@ -1,0 +1,214 @@
+<!DOCTYPE HTML >
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${site.name}</title>
+<meta http-equiv="keywords" content="${site.keywords!}" />
+<meta http-equiv="description" content="${site.description!}" />
+<head>
+    <!--[if lt IE 9]>
+    <script src="${resSys}/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${channel.title!channel.name} - ${site.name}</title>
+    <meta http-equiv="keywords" content="${site.keywords!}" />
+    <meta http-equiv="description" content="${site.description!}" />
+    <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
+    <link rel="stylesheet" href="/${res}/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/jgzg.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/news.css" type="text/css">
+
+    <script src="/${res}/js/jquery.min.js"></script>
+    <script src="/${res}/js/index.js"></script>
+
+    <link href="/${res}/css/swfupload.css" rel="stylesheet" type="text/css" />
+    <script src="/thirdparty/ckeditor/ckeditor.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/thirdparty/swfupload/swfupload.js"></script>
+    <script type="text/javascript" src="/thirdparty/swfupload/swfupload.queue.js"></script>
+    <script type="text/javascript" src="/${res}/js/handlers_front.js"></script>
+    <link href="${resSys}/front.css" rel="stylesheet" type="text/css" />
+    <script src="${resSys}/front.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function() {
+            inibase("${base}");
+            initBackground("${channel.id}");
+            Cms.siteFlow("${base}", location.href, document.referrer);
+            $.cookie("_site_id_cookie", "${site.id!}", {
+                path : '${base}'
+            });
+        });
+        var swfu;
+        window.onload = function () {
+
+            $('#zxtg_title').bind('input propertychange', function() {
+                if( $(this).val()!=""&&$('#zxtg_author').val()!="")
+                    $('#zxtg_submit').attr("disabled", false);
+                else
+                    $('#zxtg_submit').attr("disabled", true);
+            });
+            $('#zxtg_author').bind('input propertychange', function() {
+                if( $(this).val()!=""&&$('#zxtg_title').val()!="")
+                    $('#zxtg_submit').attr("disabled", false);
+                else
+                    $('#zxtg_submit').attr("disabled", true);
+            });
+            swfu = new SWFUpload({
+                upload_url: "/onlinesubmission/o_swfAttachsUpload.jspx",
+                post_params: {"name" : "huliang"},
+
+                // File Upload Settings
+                file_size_limit : "20 MB",	// 1000MB
+                file_types : "*.zip;*.rar;*.doc;*.docx",
+                file_types_description : "所有文件",
+                file_upload_limit : "1",
+
+                file_queue_error_handler : fileQueueError,
+                file_dialog_complete_handler : fileDialogComplete,//选择好文件后提交
+                file_queued_handler : fileQueued,
+                upload_progress_handler : uploadProgress,
+                upload_error_handler : uploadError,
+                upload_success_handler : uploadSuccess,
+                upload_complete_handler : uploadComplete,
+
+                // Button Settings
+                button_placeholder_id : "spanButtonPlaceholder",
+                button_width: 300,
+                button_height: 30,
+                button_text : '<span class="button">上传附件(支持rar、zip、doc、docx,小于20M)</span>',
+                button_text_style : '.button { font-family: 微软雅黑; font-size: 14px; } .buttonSmall { font-size: 10pt; }',
+                button_text_top_padding: 1,
+                button_text_left_padding: 0,
+                button_window_mode: SWFUpload.WINDOW_MODE.TRANSPARENT,
+                button_cursor: SWFUpload.CURSOR.HAND,
+
+                // Flash Settings
+                flash_url : "/thirdparty/swfupload/swfupload.swf",
+
+                custom_settings : {
+                    upload_target : "divFileProgressContainer"
+                },
+                // Debug Settings
+                debug: false  //是否显示调试窗口
+            });
+        };
+
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <!-- 顶部容器-->
+    <div class="top">
+        <!-- 顶部logo-->
+        [#include "../include/header.html"/]
+        <!-- 导航栏-->
+        [#include "../include/navi.html"/]
+        <!-- 顶部gif图-->
+        <div class="top_image_zxtg">
+
+        </div>
+    </div>
+    <div class="content">
+        <!-- 左侧导航-->
+        <div class="left_image">
+
+        </div>
+
+        <!-- 右侧在线投稿-->
+        <div class="right_zxtg_box">
+            <div class="news_location">
+                当前位置：[#list channel.nodeList as n]<a href="${n.url}" target="_self">${n.name}</a>[#if n_has_next] &gt; [/#if][/#list]
+            </div>
+            <div class="news_lists">
+                <div class="zxtg_box">
+                    <form name="zxtg" action="/onlinesubmission/submit.jspx"
+                          method="post" accept-charset="utf-8"
+                          onsubmit="document.charset='utf-8'">
+                        <input id="captcha" type="hidden" name="captcha"
+                               value="">
+                        <div class="zxtg_title">
+                            <span style="color: red;">*</span>标题: <input  type="text"
+                                                                          id="zxtg_title" name="title"> 字数小于50字
+                        </div>
+                        <div class="zxtg_author">
+                            <span style="color: red;">*</span>作者: <input  type="text"
+                                                                          id="zxtg_author" name="author">
+                        </div>
+                        <div class="zxtg_contact">
+                            <span style="color: red;">*</span>联系方式: <input  id="zxtg_contact" type="text" name="attr_phone">
+                        </div>
+                        <div class="zxtg_source">
+                            &nbsp来源: <input  type="text" name="orgin">
+                        </div>
+                        <div class="zxtg_keyword">
+                            &nbsp关键字: <input  type="text" name="tagStr"> 以","分割
+                        </div>
+                        <div id="editbox">
+                            <textarea id="content" name="txt"></textarea>
+                        </div>
+                        <script type="text/javascript">
+                            var editor = null;
+                            editor=CKEDITOR.replace('content',{
+                                filebrowserUploadUrl : '/ffck/upload.jspx?Type=File',
+                                filebrowserImageUploadUrl : '/ffck/upload.jspx?Type=Image',
+                                filebrowserFlashUploadUrl : '/ffck/upload.jspx?Type=Flash'});
+                        </script>
+                        <input type="hidden" name="channelId" value="37"><input
+                            type="hidden" name="model.id" value="1"><input
+                            type="hidden" name="modelId" value="1"><input
+                            type="hidden" name="copyimg" value="false"> <input
+                            type="hidden" name="typeId" value="1"> <input
+                            type="hidden" name="attachmentNames" value=""> <input
+                            type="hidden" name="attachmentPaths" value=""> <input
+                            type="hidden" name="attachmentFilenames" value="">
+                        <div class="attachment_upload"></div>
+
+                    </form>
+                    <script type="text/javascript">
+                        submit=function(){
+                            $("#captcha").val( $("#captcha1").val());
+                            editor.updateElement();
+                            document.zxtg.submit();}
+                        reset=function(){
+                            editor.setData();
+                            document.zxtg.reset();
+                        }
+                    </script>
+                    <div id="upload_content" style="position: relative;">
+                        <form>
+                            <div
+                                    style="height: 30px; width: 300px; background-color: #C5D9FF;">
+                                <span id="spanButtonPlaceholder"></span>
+
+                            </div>
+                        </form>
+                        <div id="divFileProgressContainer"
+                             style="position: absolute; left: 300px; top: 0px; height: 75px; width: 450px;"></div>
+                    </div>
+                    <div class="zxtg_captcha">
+                        验证码: <input id="captcha1" type="text" name="captcha"
+                                    class="short_width" value=""> <img src="${base}/captcha.svl" onclick="this.src='${base}/captcha.svl?d='+new Date()*1" height="24px" width="60px" style="vertical-align: middle; padding-left: 5px;" />
+                    </div>
+
+                    <div class="zxtg_button">
+                        <div>
+                            <input id="zxtg_submit" type="button" value="投稿" disabled="disabled"
+                                   onclick=submit();><input onclick=reset(); type="button"
+                                                            value="取消">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+    <div class="footer">
+        [#include "../include/footer1.html"/]
+    </div>
+</div>
+</div>
+
+</body>
+</html>
