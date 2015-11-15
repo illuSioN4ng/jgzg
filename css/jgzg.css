@@ -1,5 +1,5 @@
 body{
-    background: url("../images/body_bg.png") no-repeat;
+    background: url("../images/body_bg.jpg") no-repeat;
 }
 .container{
     width: 1000px;
@@ -11,7 +11,7 @@ body{
 
 .top_logo{
     height: 134px;
-    background: url("../images/top_log.png");
+    background: url("../images/top_log.jpg");
 }
 
 .nav{
@@ -104,7 +104,7 @@ body{
 }
 
 .top_image{
-    background: url('../images/top_image.png');
+    background: url('../images/top_image.jpg');
     height: 248px;
     width: 984px;
     margin: 12px auto 15px;
