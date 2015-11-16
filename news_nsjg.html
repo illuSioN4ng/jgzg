@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${channel.title!channel.name} - ${site.name}</title>
+    <meta http-equiv="keywords" content="${site.keywords!}" />
+    <meta http-equiv="description" content="${site.description!}" />
+    <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
+    <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
+    <link rel="stylesheet" href="/${res}/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/jgzg.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/news.css" type="text/css">
+
+    <script src="/${res}/js/jquery.min.js"></script>
+    <script src="/${res}/js/index.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <!-- 顶部容器-->
+    <div class="top">
+        <!-- 顶部logo-->
+        [#include "../include/header.html"/]
+        <!-- 导航栏-->
+        [#include "../include/navi.html"/]
+        <!-- 顶部gif图-->
+        <div class="top_image_jgsz">
+
+        </div>
+    </div>
+    <div class="content">
+        <!-- 左侧导航-->
+        <div class="left_navi">
+            <ul>
+                <li><a href="${base}/ldbz/index.jhtml">领导班子</a></li>
+                <li><a href="${base}/nsjg/index.jhtml">内设机构</a></li>
+                <li><a href="${base}/bszn/index.jhtml">办事指南</a></li>
+            </ul>
+        </div>
+
+        <!-- 右侧新闻列表-->
+        <div class="right_news_lists">
+            <div class="news_location">
+                当前位置：[#list channel.nodeList as n]<a href="${n.url}" target="_self">${n.name}</a>[#if n_has_next] &gt; [/#if][/#list]
+            </div>
+            <div class="news_lists">
+                [@cms_content_page count='1' orderBy='4' channelId=channel.id channelOption='1' dateFormat='yyyy-MM-dd']
+                [#list tag_list as a]
+                <div class="article_content">${a.txt}</div>
+                [/#list]
+                [/@cms_content_page]
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+    <div class="footer">
+        [#include "../include/footer1.html"/]
+    </div>
+</div>
+<script>
+    var lis = $('.left_navi li a');
+    if(${channel.id} === 15){
+        lis[0].setAttribute('id', 'left_navi_active');
+    }else if(${channel.id} === 19){
+        lis[1].setAttribute('id', 'left_navi_active');
+    }else if(${channel.id} === 20){
+        lis[2].setAttribute('id', 'left_navi_active');
+    }
+</script>
+</body>
+</html>

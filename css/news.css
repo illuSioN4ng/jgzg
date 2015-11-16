@@ -557,3 +557,79 @@
     height:75px;
     float: left;
 }
+
+/*机构设置开始*/
+.top_image_jgsz{
+    background: url("../images/top_image_jgsz.jpg") no-repeat;
+    width:1000px;
+    height: 301px;
+}
+
+.cell{
+    border-bottom: dashed 1px #999;
+}
+
+.title_Img{
+    width: 100px;
+    height: 150px;
+    padding: 15px;
+    float: left;
+}
+
+.title_Img img{
+    width: 100px;
+    height: 150px;
+}
+
+.ld_content{
+    float: left;
+}
+
+.ld_content a{
+    color: #000;
+    font-family: '微软雅黑';
+    font-size: 18px;
+    font-weight: 700;
+    width: 100px;
+    line-height: 180px;
+    padding: 0;
+    text-align: center;
+}
+
+.ld_content a:hover, .ld_content a:active{
+    color: #8c1515;
+    text-decoration: underline;
+}
+
+.ld_description{
+    color: #6e6c6c;
+    font-size: 16px;
+    width: 470px;
+    height: 180px;
+    overflow: hidden;
+    display:table-cell;
+    vertical-align:middle;
+}
+
+/*领导班子内容页*/
+.ldbz_title{
+    color: #000;
+    font-family: '微软雅黑';
+    font-size: 18px;
+    font-weight: 700;
+    width: 570px;
+    padding: 0;
+    text-align: left;
+    height: 30px;
+    float: left;
+    margin-top: 20px;
+}
+
+.ldbz_description{
+    color: #6e6c6c;
+    font-size: 16px;
+    width: 570px;
+    height: 150px;
+    overflow: hidden;
+    float: left;
+}

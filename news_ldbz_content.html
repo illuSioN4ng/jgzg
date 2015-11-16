@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${channel.title!channel.name} - ${site.name}</title>
+    <meta http-equiv="keywords" content="${site.keywords!}" />
+    <meta http-equiv="description" content="${site.description!}" />
+    <link rel="Shortcut Icon" href="/${res}/img/icon_uestc.png">
+    <link rel="stylesheet" href="/${res}/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/jgzg.css" type="text/css">
+    <link rel="stylesheet" href="/${res}/css/news.css" type="text/css">
+    <script src="${resSys}/jquery.js" type="text/javascript"></script>
+    <script src="${resSys}/front.js" type="text/javascript"></script>
+    <script src="/${res}/js/index.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            Cms.viewCount("${base}", "${content.id}");
+        });
+
+    </script>
+
+</head>
+<body>
+<div class="container">
+
+    <!-- 顶部容器-->
+    <div class="top">
+        <!-- 顶部logo-->
+        [#include "../include/header.html"/]
+        <!-- 导航栏-->
+        [#include "../include/navi.html"/]
+
+        <!-- 顶部gif图-->
+        <div class="top_image_szyw_content"></div>
+    </div>
+
+    <div class="content">
+        <!-- 左侧导航-->
+        <div class="left_image">
+
+        </div>
+
+        <!-- 右侧新闻列表-->
+        <div class="right_news_content">
+            <div class="news_location">
+                当前位置：[#list channel.nodeList as n]<a href="${n.url}" target="_self">${n.name}</a>[#if n_has_next] &gt; [/#if][/#list]
+            </div>
+            <div class="article_content">
+                <div>
+                    <div class="title_Img">
+                        <img src="${content.titleImg!site.defImg}" alt="${content.title}">
+                    </div>
+                    <div class="ldbz_title">
+                        ${content.title}
+                    </div>
+                    <div class="ldbz_description">
+                        ${content.description}
+                    </div>
+                    <div class="clr"></div>
+                </div>
+                ${txt!}
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+    <div class="footer">
+        [#include "../include/footer1.html"/]
+    </div>
+</div>
+</body>
+</html>
