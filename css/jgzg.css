@@ -225,10 +225,13 @@ body{
     color: #ca1413;
     padding: 6px 6px 6px 10px;
     font-size: 16px;
-    line-height: 30px;
     font-family: "黑体";
     margin: 5px auto;
     overflow: hidden;
+}
+
+.title{
+    line-height: 30px;
 }
 .pd{
     padding-left: 15px;
@@ -243,14 +246,18 @@ body{
 .life{
     overflow: hidden;
 }
-.life span{
+
+.shcs_content{
     font-size: 14px;
     color: black;
+    font-family: "微软雅黑";
+    line-height: 25px;
 }
+
 .life_img{
     display: block;
     float: left;
-    height: 90px;
+    height: 100px;
     width: 90px;
     border: solid 10px white;
 }
