@@ -320,10 +320,10 @@ body{
 .tab li{
     color: white;
     background-color: #a5a29f;
-
-    padding: 5px;
+    padding: 10px 5px;
     line-height: 25px;
     border-top: solid 2px white;
+    height:56px;
 }
 
 .tab li:hover{

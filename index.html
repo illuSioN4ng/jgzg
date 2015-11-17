@@ -73,7 +73,7 @@
                                         <img src="${b.titleImg!site.defImg}" alt="${b.title}">
                                     </a>
                                 </li>
-                                [#if x%4==0]
+                                [#if x%5==0]
                                     [#break]
                                 [/#if]
                             [/#if]
@@ -242,7 +242,6 @@
                         <li>特产</li>
                         <li>美食</li>
                         <li>娱乐</li>
-                        <li>互动</li>
                     </ul>
                 </div>
                 <div class="ele_bussiness_content" id="ele_bussiness_content">
@@ -284,18 +283,6 @@
                     </div>
                     <div class="entertainment">
                         [@cms_content_list count='9' orderBy='4' channelId='42' channelOption='1']
-                        [#list tag_list as a]
-                        <div class="bussiness_img">
-                            <a href="${a.url}" title="${a.title}" target="_blank">
-                                <img src="${a.titleImg!site.defImg}" alt="${a.title}">
-                                <div class="intro">[@text_cut s=a.title len=4 append='...'/]</div>
-                            </a>
-                        </div>
-                        [/#list]
-                        [/@cms_content_list]
-                    </div>
-                    <div class="interact">
-                        [@cms_content_list count='9' orderBy='4' channelId='43' channelOption='1']
                         [#list tag_list as a]
                         <div class="bussiness_img">
                             <a href="${a.url}" title="${a.title}" target="_blank">
