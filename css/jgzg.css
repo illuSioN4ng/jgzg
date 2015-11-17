@@ -124,7 +124,7 @@ body{
     border-top: solid 3px #d5c2b0;
     color: #ca1413;
     line-height: 30px;
-    font-family: "黑体";
+
     margin: 5px auto;
 }
 
@@ -135,7 +135,7 @@ body{
     padding: 6px 6px 6px 10px;
     color: #ca1413;
     line-height: 30px;
-    font-family: "黑体";
+
     margin: 5px auto;
 }
 
@@ -159,6 +159,7 @@ body{
     line-height: 20px;
     display: block;
     padding-left: 5px;
+    font-family: "微软雅黑";
 }
 
 .content_list a:link, .content_list a:visited {
@@ -225,7 +226,7 @@ body{
     color: #ca1413;
     padding: 6px 6px 6px 10px;
     font-size: 16px;
-    font-family: "黑体";
+
     margin: 5px auto;
     overflow: hidden;
 }
@@ -296,9 +297,10 @@ body{
 
 .fast_channel table td{
     font-size: 12px;
+    line-height:25px;
     padding: 5px 20px;
     width: 110px;
-    background: url("../images/media_li.png") no-repeat 0 15px;
+    background: url("../images/media_li.png") no-repeat 0 13px;
 }
 
 .fast_channel table td a{
