@@ -64,20 +64,20 @@
                 <ul id="pic">
                     [@cms_content_list count='100' orderBy='4' titLen='21'
                     channelId='1' channelOption='1']
-                        [#assign x=0 /]
-                        [#list tag_list as b]
-                            [#if b.titleImg??]
-                                [#assign x = x+1 /]
-                                <li>
-                                    <a href="${b.url}" title="${b.title}" target="_blank">
-                                        <img src="${b.titleImg!site.defImg}" alt="${b.title}">
-                                    </a>
-                                </li>
-                                [#if x%5==0]
-                                    [#break]
-                                [/#if]
-                            [/#if]
-                        [/#list]
+                    [#assign x=0 /]
+                    [#list tag_list as b]
+                    [#if b.titleImg??]
+                    [#assign x = x+1 /]
+                    <li>
+                        <a href="${b.url}" title="${b.title}" target="_blank">
+                            <img src="${b.titleImg!site.defImg}" alt="${b.title}">
+                        </a>
+                    </li>
+                    [#if x%5==0]
+                    [#break]
+                    [/#if]
+                    [/#if]
+                    [/#list]
                     [/@cms_content_list]
                 </ul>
                 <ol id="list">
@@ -209,10 +209,10 @@
                 <table>
                     <tr>
                         <td><a href="${base}/ysjk/index.jhtml">云数据库</a></td>
-                        <td><a href="">干部日常管理系统</a></td>
+                        <td><a href="http://120.24.161.217:8080/jiangeApp/c/login.html">干部日常管理系统</a></td>
                     </tr>
                     <tr>
-                        <td><a href="">贫困村第一书记系统</a></td>
+                        <td><a href="http://120.24.161.217:8080/jiangeApp/d/menupc.html">贫困村第一书记系统</a></td>
                         <td><a href="${base}/onlinesubmission/index.jhtml">在线投稿</a></td>
                     </tr>
                 </table>
